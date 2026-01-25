@@ -19,6 +19,10 @@ Durante la ejecucion del programa, A y D van teniendo distintos valores, hasta q
 
 
 #### Experimento 2
+<img width="1358" height="265" alt="image" src="https://github.com/user-attachments/assets/8ad78037-4c7a-411d-b737-c165f1ce0399" />
+
+<img width="1542" height="610" alt="image" src="https://github.com/user-attachments/assets/5b808950-7dc7-4cf1-9860-df4f3fa7735b" />
+
 
 
 ## Bitácora de proceso de aprendizaje
@@ -29,3 +33,4 @@ Durante la ejecucion del programa, A y D van teniendo distintos valores, hasta q
 
 
 ## Bitácora de reflexión
+
