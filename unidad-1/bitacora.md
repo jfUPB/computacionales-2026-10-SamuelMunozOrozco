@@ -62,10 +62,17 @@ Esta condicion mira el valor que tenga el registro D y dice que si D es igual a 
 
 
 ## Bitácora de aplicación 
+### Actividad 4
+
+<img width="1668" height="813" alt="image" src="https://github.com/user-attachments/assets/33018342-ec57-4d80-a347-62aa6905b8d4" />
+
+<img width="1255" height="752" alt="image" src="https://github.com/user-attachments/assets/82bc90db-f616-44d4-90c3-4cff7ebf51a4" />
+
 
 
 
 ## Bitácora de reflexión
+
 
 
 
