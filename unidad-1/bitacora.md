@@ -50,6 +50,12 @@ Esta condicion mira el valor que tenga el registro D y dice que si D es igual a 
 
 ### Actividad 3
 
+<img width="702" height="732" alt="image" src="https://github.com/user-attachments/assets/b7f44fe7-a04c-427e-9619-e5288f89810b" />
+
+<img width="1375" height="537" alt="image" src="https://github.com/user-attachments/assets/dfd51a46-21e3-4a02-af51-d59dd55a8894" />
+
+
+
 
 
 ## Bitácora de proceso de aprendizaje
@@ -60,5 +66,6 @@ Esta condicion mira el valor que tenga el registro D y dice que si D es igual a 
 
 
 ## Bitácora de reflexión
+
 
 
