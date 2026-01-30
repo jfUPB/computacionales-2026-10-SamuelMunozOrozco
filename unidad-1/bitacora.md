@@ -72,6 +72,52 @@ Esta condicion mira el valor que tenga el registro D y dice que si D es igual a 
 
 
 ## Bitácora de reflexión
+### Actividad 5
+#### 1. Fses del ciclo Fetch- Decode- Execute y rol de PC
+* Fetch. Su objetivo es el de buscar, la CPU va a la memoria de instrucciones y trae la que este en la direccion indicada por el PC
+* Decode. Lo que hace es que la CPU decodifica las instrucciones y las interpreta
+* Execute. Ejecuta las instrucciones que interpreta la CPU, hace operaciones ALU, guarda resultados en los registros y si hay un salto, lo hace.
+* Rol del PC. Guarda la direccion de la siguiente instruccion a ejecutar y se incrementa en 1, pero si hay un salto, el PC toma el valor indicado por el registro A.
+
+#### 2.Diferencia entre instruccion A y C
+* A. Empieza con @ y sirve para cargar un valor en el registro A, puede ser una constante, una direccion de memoria y una etiqueta. Ej: @10, @loop.
+* C. Sirve para hacer calculos, mover datos o saltos. D=M, D=D+1, D:JGT.
+
+#### 3. Funciones de los componentes del computador Hack
+* Registro A. Guarda direcciones de la memoria, tambien define que celda de RAM es M.
+* Registro D. Es un registro de datos temporales y se usa para calculos y comparaciones.
+* Alu. Hace operaciones, suma, restra, comparaciones (<, >, =).
+
+#### 4. Como se implementa un salto condicional en Hack
+* Necesitamos una instruccion de tipo C, una condicion JGT, JEQ, JLT, el destino del salto se guarda previamente en A. Ej: @POSITIVO, D;JGT.
+
+#### 5. Como se implementa un loop en Hack
+(LOOP)
+D=M
+@END
+D;JEQ
+
+@COUNTER
+M=M-1
+@LOOP
+0;JMP
+
+(END)
+
+#### 6. Diferencia entre D=M y M=D
+* D=M. Copia el valor de la memoria (RAM[A]) en el registro D.
+* M=D. Copia el valor del registro D a la memoria (RAM[A])
+* Una lee la memoria y otra escribe la memoria
+
+#### 7. Pintar Pixeles en la pantalla
+* KBD es una direccion de memoria mapeada
+* Guarda el codigo de la tecla presionada
+Ej:
+@KBD
+D=M
+
+@SCREEN
+M=-1
 
 
 
