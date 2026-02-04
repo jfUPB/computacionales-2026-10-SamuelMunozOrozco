@@ -7,6 +7,13 @@
 
 <img width="1248" height="483" alt="image" src="https://github.com/user-attachments/assets/45e0538c-b63a-4686-aef3-318a697e5b34" />
 
+### Actividad 2
+<img width="1250" height="477" alt="image" src="https://github.com/user-attachments/assets/e157f4df-13da-4c2a-8e35-54745eeed335" />
+
+<img width="1498" height="815" alt="image" src="https://github.com/user-attachments/assets/1856a050-9c8a-4132-a644-b88eb3abf4d5" />
+
+
+
 ### Actividad 3
 <img width="1287" height="792" alt="image" src="https://github.com/user-attachments/assets/365b93c5-eb38-4358-b7d3-d65bd30669d2" />
 
@@ -22,4 +29,5 @@
 
 
 ## Bitácora de reflexión
+
 
