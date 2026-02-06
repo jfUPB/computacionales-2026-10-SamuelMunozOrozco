@@ -21,6 +21,13 @@
 
 <img width="1742" height="662" alt="image" src="https://github.com/user-attachments/assets/469d043b-ade5-4a6f-aa24-cc7cafd79b76" />
 
+### Actividad 5
+<img width="1600" height="827" alt="image" src="https://github.com/user-attachments/assets/25db83ee-75bd-4b8c-a665-552c06e05be1" />
+
+<img width="1254" height="751" alt="image" src="https://github.com/user-attachments/assets/8373457e-2836-479c-9c60-07ccd7d3d8c6" />
+
+
+
 
 
 
@@ -29,5 +36,6 @@
 
 
 ## Bitácora de reflexión
+
 
 
