@@ -27,6 +27,12 @@
 <img width="1254" height="751" alt="image" src="https://github.com/user-attachments/assets/8373457e-2836-479c-9c60-07ccd7d3d8c6" />
 
 
+<img width="1585" height="802" alt="image" src="https://github.com/user-attachments/assets/d1db9866-f6d0-4cf3-af2b-9d6280cfa99f" />
+
+<img width="1270" height="653" alt="image" src="https://github.com/user-attachments/assets/1d13e5d6-9e3f-4e5d-87cf-5af73b09dd84" />
+
+
+
 
 
 
@@ -36,6 +42,7 @@
 
 
 ## Bitácora de reflexión
+
 
 
 
