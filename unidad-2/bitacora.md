@@ -31,7 +31,9 @@
 
 <img width="1270" height="653" alt="image" src="https://github.com/user-attachments/assets/1d13e5d6-9e3f-4e5d-87cf-5af73b09dd84" />
 
+### Actividad 6
 
+### Actividad 7
 
 
 
@@ -42,6 +44,7 @@
 
 
 ## Bitácora de reflexión
+
 
 
 
