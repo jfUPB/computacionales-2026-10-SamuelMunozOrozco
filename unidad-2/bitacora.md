@@ -99,6 +99,158 @@
 <img width="1707" height="853" alt="image" src="https://github.com/user-attachments/assets/3907ab4a-9706-4a8d-ba2b-5fc4e0ee51d8" />
 
 #### Codigo del Bitmap
+```
+function void draw(int location) {
+	var int memAddress; 
+	let memAddress = 16384+location;
+	// column 0
+	do Memory.poke(memAddress, 4);
+	do Memory.poke(memAddress +32, 14);
+	do Memory.poke(memAddress +64, 31);
+	do Memory.poke(memAddress +96, 14);
+	do Memory.poke(memAddress +128, 4);
+	return;
+}
+```
+
+#### Codigo ensamblador
+```
+// PROGRAMA PRINCIPAL
+// d = dibujar
+// e = borrar
+
+(START)
+    @LOOP
+    0;JMP
+
+// LOOP PRINCIPAL
+(LOOP)
+    @24576        // KBD
+    D=M
+
+    // tecla 'd' (ASCII 100)
+    @100
+    D=D-A
+    @DRAW
+    D;JEQ
+
+    @24576        // volver a leer teclado
+    D=M
+
+    // tecla 'e' (ASCII 101)
+    @101
+    D=D-A
+    @ERASE
+    D;JEQ
+
+    @LOOP
+    0;JMP
+
+// RUTINA DIBUJAR BITMAP (5 filas)
+(DRAW)
+    // memAddress = SCREEN (16384)
+    @16384
+    D=A
+    @addr
+    M=D
+
+    // Fila 1 -> 4
+    @4
+    D=A
+    @addr
+    A=M
+    M=D
+
+    // Fila 2 -> 14
+    @addr
+    D=M
+    @32
+    D=D+A
+    @addr
+    M=D
+    @14
+    D=A
+    @addr
+    A=M
+    M=D
+
+    // Fila 3 -> 31
+    @addr
+    D=M
+    @32
+    D=D+A
+    @addr
+    M=D
+    @31
+    D=A
+    @addr
+    A=M
+    M=D
+
+    // Fila 4 -> 14
+    @addr
+    D=M
+    @32
+    D=D+A
+    @addr
+    M=D
+    @14
+    D=A
+    @addr
+    A=M
+    M=D
+
+    // Fila 5 -> 4
+    @addr
+    D=M
+    @32
+    D=D+A
+    @addr
+    M=D
+    @4
+    D=A
+    @addr
+    A=M
+    M=D
+
+    @LOOP
+    0;JMP
+
+// RUTINA BORRAR BITMAP (5 filas)
+(ERASE)
+    @16384
+    D=A
+    @addr
+    M=D
+
+    @5            // número de filas
+    D=A
+    @counter
+    M=D
+
+(CLEAR_LOOP)
+    @addr
+    A=M
+    M=0
+
+    // addr += 32
+    @addr
+    D=M
+    @32
+    D=D+A
+    @addr
+    M=D
+
+    @counter
+    M=M-1
+    D=M
+    @CLEAR_LOOP
+    D;JGT
+
+    @LOOP
+    0;JMP
+
+```
 
 
 
