@@ -59,7 +59,7 @@
 
 * D=M carga el valor de "a"
 
-* Luego ponemos R14 como registro temporal y igualamos M=D para que guarde el valor de "a temporalmente mientras hacemos el cambio"
+* Luego ponemos R13 como registro temporal y igualamos M=D para que guarde el valor de "a temporalmente mientras hacemos el cambio"
 
 * Luego A carga la direccion de "b" y la ponemos en D
 
@@ -67,6 +67,11 @@
 
 * Y por ultimo al igualar M=D cargamos el valor de "b" en "a"
 <img width="1485" height="306" alt="image" src="https://github.com/user-attachments/assets/e4b24468-0421-482e-a250-dd8f2955a26b" />
+* Por ultimo seleccionamos la memoria temporal R13
+
+* Copiamos el valor temporal en el registro D y seleccionamos R1 para que luego A tenga la direccion de "b"
+
+* Y por ultimo igualamos M=D para asi guardar el valor temporal en b. Y asi se intercambian los valores de a y b
 
 #### Capturas CPU Emulator
 <img width="1548" height="823" alt="image" src="https://github.com/user-attachments/assets/62932b1e-91b5-4023-823f-c6560b9af431" />
@@ -91,6 +96,7 @@
 
 
 ## Bitácora de reflexión
+
 
 
 
