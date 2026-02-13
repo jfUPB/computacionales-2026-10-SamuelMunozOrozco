@@ -35,15 +35,39 @@
 
 ### Actividad 7
 
-
-
-
-
 ## Bitácora de aplicación 
+
+### Actividad 8
+#### Capturas codigos
+<img width="1491" height="805" alt="image" src="https://github.com/user-attachments/assets/c23dc0e3-2e76-4f91-b402-35d619748f70" />
+<img width="1496" height="807" alt="image" src="https://github.com/user-attachments/assets/86d416d7-574a-412c-b821-bc611e4dc64b" />
+<img width="1491" height="802" alt="image" src="https://github.com/user-attachments/assets/26a67687-bf50-405a-972b-3ff2fbcfa0b5" />
+<img width="1485" height="306" alt="image" src="https://github.com/user-attachments/assets/e4b24468-0421-482e-a250-dd8f2955a26b" />
+
+#### Capturas CPU Emulator
+<img width="1548" height="823" alt="image" src="https://github.com/user-attachments/assets/62932b1e-91b5-4023-823f-c6560b9af431" />
+<img width="1546" height="827" alt="image" src="https://github.com/user-attachments/assets/24a0bc2e-7a89-482f-a3ad-d8372aa3d11e" />
+<img width="1549" height="829" alt="image" src="https://github.com/user-attachments/assets/275e4cce-1203-48c6-b506-9cecbc4aa92c" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 ## Bitácora de reflexión
+
 
 
 
