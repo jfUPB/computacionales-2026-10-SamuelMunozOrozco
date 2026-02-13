@@ -41,15 +41,31 @@
 #### Capturas codigos
 <img width="1491" height="805" alt="image" src="https://github.com/user-attachments/assets/c23dc0e3-2e76-4f91-b402-35d619748f70" />
 * Primero se creamos las variables las cuales guardaran los valores 10 y 20, que seran "a" y "b" y guardamos si posicion en la RAM
+  
 * Luego procedemos a darles estos valores a las variables
 
 <img width="1496" height="807" alt="image" src="https://github.com/user-attachments/assets/86d416d7-574a-412c-b821-bc611e4dc64b" />
 * Ahora hacemos la logica del intercambio o swap
+  
 * Hacemos que A guarde la direccion de "a" y hacemos que D tome esa direccion
+  
 * Ponemos R0 y y igualamos M=D para que asi esa direccion se guarde en R0
+  
 * Y hacemos exactamente lo mism con "b", es exactamente lo mismo, lo unico que cambiamos es "a" por "b" y R0 por R1
+  
 * Luego guardamos la direccion del retorno, que valga la redundancia, es lo mismo, solo cambiamos "a" por "returnFromSwap" y R0 por R15
 <img width="1491" height="802" alt="image" src="https://github.com/user-attachments/assets/26a67687-bf50-405a-972b-3ff2fbcfa0b5" />
+* A carga la direccion guardada en R0
+
+* D=M carga el valor de "a"
+
+* Luego ponemos R14 como registro temporal y igualamos M=D para que guarde el valor de "a temporalmente mientras hacemos el cambio"
+
+* Luego A carga la direccion de "b" y la ponemos en D
+
+* Luego ponemos R0 y cargamos la direccion de "a" en la memoria
+
+* Y por ultimo al igualar M=D cargamos el valor de "b" en "a"
 <img width="1485" height="306" alt="image" src="https://github.com/user-attachments/assets/e4b24468-0421-482e-a250-dd8f2955a26b" />
 
 #### Capturas CPU Emulator
@@ -75,6 +91,7 @@
 
 
 ## Bitácora de reflexión
+
 
 
 
