@@ -95,6 +95,15 @@
 * Aqui se puede ver como desaparece la figura y igual, esta habilitado el teclado y cuando se oprime e sale el codigo 101
 <img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/e1e8d65d-59a3-4925-9b86-6e81214ac1b7" />
 
+#### La imagen de la figura
+<img width="1707" height="853" alt="image" src="https://github.com/user-attachments/assets/3907ab4a-9706-4a8d-ba2b-5fc4e0ee51d8" />
+
+#### Codigo del Bitmap
+
+
+
+
+
 
 
 
