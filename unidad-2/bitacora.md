@@ -74,6 +74,7 @@
 * Y por ultimo igualamos M=D para asi guardar el valor temporal en b. Y asi se intercambian los valores de a y b
 
 #### Capturas CPU Emulator
+##### Aqui evidenciamos los resultados del codigo
 <img width="1548" height="823" alt="image" src="https://github.com/user-attachments/assets/62932b1e-91b5-4023-823f-c6560b9af431" />
 <img width="1546" height="827" alt="image" src="https://github.com/user-attachments/assets/24a0bc2e-7a89-482f-a3ad-d8372aa3d11e" />
 <img width="1549" height="829" alt="image" src="https://github.com/user-attachments/assets/275e4cce-1203-48c6-b506-9cecbc4aa92c" />
@@ -96,6 +97,7 @@
 
 
 ## Bitácora de reflexión
+
 
 
 
