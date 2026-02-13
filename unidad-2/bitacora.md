@@ -76,8 +76,13 @@
 #### Capturas CPU Emulator
 ##### Aqui evidenciamos los resultados del codigo
 <img width="1548" height="823" alt="image" src="https://github.com/user-attachments/assets/62932b1e-91b5-4023-823f-c6560b9af431" />
+* Podemos ver en las direcciones de memoria RAM 16 y 17 que tienen los valores respectivos de a y b
 <img width="1546" height="827" alt="image" src="https://github.com/user-attachments/assets/24a0bc2e-7a89-482f-a3ad-d8372aa3d11e" />
+* En esta, en la direccion numero 13, podemos ver la memoria temporal que guarda el valor de a
+<img width="1548" height="793" alt="image" src="https://github.com/user-attachments/assets/34312339-63a8-414b-93b1-2963dbf0bd95" />
+* Aqui vemos como en la direccion 16, toma el valor de b
 <img width="1549" height="829" alt="image" src="https://github.com/user-attachments/assets/275e4cce-1203-48c6-b506-9cecbc4aa92c" />
+* Por ultimo, se ev idencia el cambio, ahora a tiene el valor de b y b tiene el valor de a
 
 
 
@@ -97,6 +102,7 @@
 
 
 ## Bitácora de reflexión
+
 
 
 
