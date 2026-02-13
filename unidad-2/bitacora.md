@@ -99,7 +99,7 @@
 <img width="1707" height="853" alt="image" src="https://github.com/user-attachments/assets/3907ab4a-9706-4a8d-ba2b-5fc4e0ee51d8" />
 
 #### Codigo del Bitmap
-```
+```jack
 function void draw(int location) {
 	var int memAddress; 
 	let memAddress = 16384+location;
@@ -114,7 +114,7 @@ function void draw(int location) {
 ```
 
 #### Codigo ensamblador
-```
+```asm
 // PROGRAMA PRINCIPAL
 // d = dibujar
 // e = borrar
@@ -251,6 +251,7 @@ function void draw(int location) {
     0;JMP
 
 ```
+
 
 
 
