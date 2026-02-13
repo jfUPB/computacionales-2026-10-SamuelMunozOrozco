@@ -84,24 +84,20 @@
 <img width="1549" height="829" alt="image" src="https://github.com/user-attachments/assets/275e4cce-1203-48c6-b506-9cecbc4aa92c" />
 * Por ultimo, se ev idencia el cambio, ahora a tiene el valor de b y b tiene el valor de a
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Bitácora de reflexión
+
+### Actividad 9
+<img width="1552" height="799" alt="image" src="https://github.com/user-attachments/assets/6366de09-37a8-4b55-a73f-1f21c6ed47ca" />
+* Se puede ver en el SCREEN que se dibuja la figura, no se ve en el pantallazo, por pronlemas tecnicos, pero esta habilitado el poder oprimir las teclas, cuando se oprime la tecla d sale el codigo 100
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/8a7a6ee2-fe3a-4916-855c-0f14fe1df292" />
+* lafigura esta en la esquina superior izquierda
+<img width="1543" height="848" alt="image" src="https://github.com/user-attachments/assets/326c7af2-d2ee-4b34-a2fc-9ecbafe0405c" />
+* Aqui se puede ver como desaparece la figura y igual, esta habilitado el teclado y cuando se oprime e sale el codigo 101
+<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/e1e8d65d-59a3-4925-9b86-6e81214ac1b7" />
+
+
+
+
 
 
 
