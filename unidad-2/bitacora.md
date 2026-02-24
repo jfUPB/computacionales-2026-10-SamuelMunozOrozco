@@ -1,6 +1,58 @@
 # Unidad 2
 
 ## Bitácora de proceso de aprendizaje
+#### Notas importantes
+#### Que es un puntero y como funciona
+##### Primero: ¿Qué guarda normalmente una variable?
+Cuando haces:
+```cpp
+int x = 5;
+```
+* Se crea un espacio de memoria
+* Se agrega el valor 5 a ese espacio
+* "x" es el nombre para acceder a ese valor
+
+##### ¿Qué es un puntero?
+* Es una variable que guarda la direccion de memoria de otra, pero no su valor
+
+##### ¿Qué significa esto?
+El operador & → “dirección de”
+```cpp
+int x = 5;
+cout << &x;
+```
+Eso imprime algo como:
+```
+0x61ff08
+```
+* Este numero es la direccion de memoria donde esta guardado "x"
+
+##### Declarar un puntero → *
+```cpp
+int *p;
+```
+* "p" significa una variable que va a guardar la direccion de un entero "int"
+* No guarda un numero o un valor, sino una direccion, como: "0x61ff08"
+
+##### Hacer que el puntero apunte a una variable
+```cpp
+int x = 5;
+int *p = &x;
+```
+* "&x" es la direccion de memoria de "x"
+* "p" guarda esa direccion. En otras palabras, "p" apunta a "x"
+
+##### ¿Cómo accedo al valor usando el puntero?
+```cpp
+cout << *p;
+```
+* Esto significa: "Ve a la direccion de 'p' y trae el valor que esta ahi"
+Entonces:
+```cpp
+cout << *p; // imprime 5
+```
+
+
 
 ### Actividad 1
 <img width="1509" height="815" alt="image" src="https://github.com/user-attachments/assets/485e63c0-8452-424e-838f-a4603fa1017e" />
@@ -251,6 +303,7 @@ function void draw(int location) {
     0;JMP
 
 ```
+
 
 
 
