@@ -174,7 +174,7 @@ modificarPorValor(a);
 ```
 Despues de ejecutar "modificarPorValor(a)"
 
-¿el valor de a en main cambia o sigue siendo 10?
+##### ¿el valor de a en main cambia o sigue siendo 10?
 R/= No cambia
 En: 
 ```cpp
@@ -190,7 +190,7 @@ n += 5;
 * Fuera de la funcion "a" sigue siendo 10
 
 Si dentro de la función se modifica una copia,
-¿por qué la variable original no se ve afectada?
+##### ¿por qué la variable original no se ve afectada?
 R/= Porque la copia esta en una direccion de memoria diferente, como sellama la direccion de la copia, por eso cambia la copia y no la original
 * En resumen, son dos variables distintas, tienen ubicaciones distintas y cambiar una no cambia la otra
 
@@ -208,7 +208,7 @@ int &n
 ```
 * Esto es una referencia, para darle otro nombre a la misma variable
 * Entonces si modificamos n, tambien modificamos la variable a la que hace referencia
-¿Aquí se crea una copia o no se crea copia?
+##### ¿Aquí se crea una copia o no se crea copia?
 R/= No se crea una copia
 
 Cuando usas:
@@ -219,13 +219,12 @@ int &n
 
 Pregunta concreta:
 
-Si b = 10 en main
-y llamas:
+Si b = 10 en main y llamas:
 ```cpp
 modificarPorReferencia(b);
 ```
 Después de la llamada…
-¿Cuánto vale b?
+##### ¿Cuánto vale b?
 R/= Valdria 15. Porque como no se creo una copia, y recordemos que "n" es otra forma de llamar a "b", al hacer:
 ```cpp
 n += 5;
@@ -285,6 +284,7 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
 
 
