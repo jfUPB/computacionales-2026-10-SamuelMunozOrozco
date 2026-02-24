@@ -267,6 +267,69 @@ R/=
 * Paso por referencia. Se le crea un nuevo nombre a la variable y cuando se le cambia el valor a esa referencia, cambia el valor de la variable original
 * Paso por puntero. El puntero guarda la direccion donde esta el valor de la variable, y luego va a la direccion donde dice el puntero y cambia el valor que este ahi
 
+#### Parte final de reflexion - Implementacion de "swap"
+##### swap por Paso por valor
+Si intentas hacer un swap usando paso por valor…
+##### ¿Crees que las variables originales en main se intercambiarán realmente o no?
+R/=
+* No porque se crean copias de los valores
+* El intercambio ocurre solo dentro de la funcion de "swap"
+* Al regresar a "main", las variables originales siguen igual
+
+Imagina esta función (paso por valor):
+```cpp
+void swapPorValor(int a, int b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+```
+Pregunta concreta:
+
+Si en main tienes:
+```cpp
+int x = 3;
+int y = 8;
+swapPorValor(x, y);
+```
+##### Después de la llamada, ¿cuáles serán los valores de x y y en main?
+R/=
+* Seguirian teniendo el mismo valor
+* El "swapPorValor" crea copias del main, que serian "a" y "b"
+* Por ende los que intercambian serian "a" y "b", DENTRO DE LA FUNCION "swapPorValor"
+##### El intercambio ocurre AQUI (Solo de las copias)
+```cpp
+int temp = a;
+a = b;
+b = temp;
+```
+
+##### swap por referencia
+Si hacemos el swap por referencia:
+```cpp
+void swapPorReferencia(int &a, int &b)
+{
+    int temp = a;
+    a = b;
+    b = temp;
+}
+```
+Pregunta directa:
+
+Si en main tienes:
+```cpp
+int x = 3;
+int y = 8;
+swapPorReferencia(x, y);
+```
+##### Después de la llamada, ¿cuáles serán los valores de x y y?
+R/=
+* x=8 y y=3, en el main.
+* Porque no se hacen copias
+* a y v, son alias, o tras formas de llamar a "x" y "y"
+* 
+
 
 ```cpp
 #include <iostream>
@@ -320,6 +383,7 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
 
 
