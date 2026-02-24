@@ -52,6 +52,23 @@ Entonces:
 cout << *p; // imprime 5
 ```
 
+##### Modificar el valor usando el puntero
+```cpp
+*p = 20;
+```
+* Esto significa: "Ve a la direccion de 'p' y cambia su valor"
+
+Como p apunta a x, entonces:
+```cpp
+int x = 5;
+int *p = &x;
+
+*p = 20;
+
+cout << x; // imprime 20 😲
+```
+* Asi modificamos una variable sin usarla directamente
+
 
 
 ### Actividad 1
@@ -303,6 +320,7 @@ function void draw(int location) {
     0;JMP
 
 ```
+
 
 
 
