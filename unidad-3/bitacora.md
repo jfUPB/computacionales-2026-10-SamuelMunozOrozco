@@ -173,7 +173,6 @@ int a = 10;
 modificarPorValor(a);
 ```
 Despues de ejecutar "modificarPorValor(a)"
-
 ##### ¿el valor de a en main cambia o sigue siendo 10?
 R/= No cambia
 En: 
@@ -231,6 +230,43 @@ n += 5;
 ```
 * Estamos modificando directamente a "b"
 
+#### Parte 3 - Paso por puntero
+Ahora mira esta función:
+```cpp
+void modificarPorPuntero(int *n) {
+    *n += 5;
+}
+```
+Y la llamada:
+```cpp
+modificarPorPuntero(&c);
+```
+Pregunta directa:
+##### ¿Qué se está enviando realmente cuando usamos &c?
+R/= Se esta mandando la direccion de memoria de "c"
+
+Dentro de la función:
+```cpp
+*n += 5;
+```
+##### El *n significa:
+* Ve a la direccion que me enviaron y modifica el valor que esta ahi
+
+Pregunta directa para cerrar esta parte:
+
+Si c = 10 antes de la llamada,
+después de ejecutar modificarPorPuntero(&c);
+##### ¿Cuánto vale c?
+R/= 
+* Se paso a la direccio de "c"
+* Dentro de la funcion se modifico e valor en esa direccion
+* Por eso cambia directamente "c"
+
+##### Un pequeño resumen
+* Paso por valor. Genera una copia de la variable original y se modifica el valor de esa copia
+* Paso por referencia. Se le crea un nuevo nombre a la variable y cuando se le cambia el valor a esa referencia, cambia el valor de la variable original
+* Paso por puntero. El puntero guarda la direccion donde esta el valor de la variable, y luego va a la direccion donde dice el puntero y cambia el valor que este ahi
+
 
 ```cpp
 #include <iostream>
@@ -284,6 +320,7 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
 
 
