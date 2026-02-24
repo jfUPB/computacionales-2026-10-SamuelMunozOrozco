@@ -2,8 +2,13 @@
 
 ## Bitácora de proceso de aprendizaje
 
-### Actividad 1
+### Actividad 1 
+#### Notas
+```cpp
 ```
+
+
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -107,3 +112,4 @@ int main() {
 
 
 ## Bitácora de reflexión
+
