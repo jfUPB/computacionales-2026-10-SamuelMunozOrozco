@@ -158,7 +158,7 @@ int main() {
     return 0;
 }
 ```
-#### Parte 1
+#### Parte 1 – Paso por valor
 Tenemos esta funcion
 ```cpp
 void modificarPorValor(int n) {
@@ -194,7 +194,8 @@ Si dentro de la función se modifica una copia,
 R/= Porque la copia esta en una direccion de memoria diferente, como sellama la direccion de la copia, por eso cambia la copia y no la original
 * En resumen, son dos variables distintas, tienen ubicaciones distintas y cambiar una no cambia la otra
 
-#### Parte 2
+
+#### Parte 2 – Paso por referencia
 Ahora mira esta función:
 ```cpp
 void modificarPorReferencia(int &n) {
@@ -208,8 +209,28 @@ int &n
 * Esto es una referencia, para darle otro nombre a la misma variable
 * Entonces si modificamos n, tambien modificamos la variable a la que hace referencia
 ¿Aquí se crea una copia o no se crea copia?
-R/= 
+R/= No se crea una copia
 
+Cuando usas:
+```cpp
+int &n
+```
+* "n" se convierte en una alias de la variable originla, es como ponerle oto nombre, pero sigue siendo la misma variable
+
+Pregunta concreta:
+
+Si b = 10 en main
+y llamas:
+```cpp
+modificarPorReferencia(b);
+```
+Después de la llamada…
+¿Cuánto vale b?
+R/= Valdria 15. Porque como no se creo una copia, y recordemos que "n" es otra forma de llamar a "b", al hacer:
+```cpp
+n += 5;
+```
+* Estamos modificando directamente a "b"
 
 
 ```cpp
@@ -264,6 +285,7 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
 
 
