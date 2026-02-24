@@ -40,7 +40,19 @@ Se coloca un breakpoint en:
 ```cpp
 int a = 5;
 ```
-* 
+* Cuando presiono F10 estando detenido en la linea anterior, lo que pasa es que se ejecuta esa linea y luego el depurador pasa a la siguiente. En corto, esta ejecutando paso a paso
+
+Lo que pasa en el Autos es lo siguiente:
+* Muestra las variables locales del contexto actual, es decir, las que pertenecen a la funcion en la que esta detenido el breakpoint
+* En este caso, mostrar a y b del main
+* Si estuviera en sum, mostraria los parametros de sum
+
+##### 1. ¿Para qué sirven los breakpoints?
+R/= Los breakpoint detienen el programa en un punto especifico y dejan analizar el estado actual del programa antes que continue
+
+##### 2. ¿Para qué se usa la ventana de depuración Autos?
+R/= La ventana de Autos muestra las variables locales del punto que esta detenido por el breakpoint en el programa. Y permite observar como cambian sus valores mientras se ejecuta paso a paso
+
 
 
 ```cpp
@@ -147,5 +159,6 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
 
