@@ -327,8 +327,49 @@ swapPorReferencia(x, y);
 R/=
 * x=8 y y=3, en el main.
 * Porque no se hacen copias
-* a y v, son alias, o tras formas de llamar a "x" y "y"
-* 
+* a y b, son alias, o tras formas de llamar a "x" y "y"
+* Por eso el intercambio ocurre directamente sobre las variables originales
+
+##### swap por puntero
+Si la función es así:
+```cpp
+void swapPorPuntero(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+```
+Y en main llamas:
+```cpp
+int x = 3;
+int y = 8;
+swapPorPuntero(&x, &y);
+```
+Pregunta final:
+##### Después de la llamada, ¿cuáles serán los valores de x y y?
+R/=
+* x= 8 y y=3
+* Se envian las direcciones de x y y
+* *a y *b acceden a los valores originales
+* El intercambio afecta directamente al main
+
+#### Resumen
+##### 1. ¿Qué pasa en paso por valor?
+* Se crwan copias de las variables en el main
+* Los cambios de valor o intercambio ocurren DENTRO de la funcion de "PasoPorValor"
+* Las variables originales no cambian
+
+##### 2. ¿Qué pasa en paso por referencia?
+* Se crean alias, o sea, se le ponen otros nombres a las variables originales, pero SIGUEN SIENDO LAS MISMAS
+* Los cambios de valor o intercambios ocurren DENTRO de la funcion "PasoPorReferencia" y esto afecta las variables originales
+
+##### 3. ¿Qué pasa en paso por puntero?
+* Se pasan las direccin=ones de las variables originales
+* Usando el operador "*" se accede al valor en esa direccion
+* Las modificaciones en los valores ocurren dentro de la funcion "PasoPorpuntero" y esto afecta directamente el main
+
+
 
 
 ```cpp
@@ -383,6 +424,7 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
 
 
