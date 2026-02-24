@@ -5,7 +5,42 @@
 ### Actividad 1 
 #### Notas
 ```cpp
+#include <iostream>
+
+int sum(int a, int b)
+{
+    return a + b;
+}
+
+int main()
+{
+    int a = 5;
+    int b = 7;
+    std::cout << "La suma de " << a << " y " << b << " es " << sum(a, b) << "\n";
+}
 ```
+#### Parte 1
+```cpp
+int sum(int a, int b)
+{
+    return a + b;
+}
+```
+* El int antes del sum indica el tipo de dato que devuelve
+* "Return" termina la funcion y envia el resultado a donde fue llamada, que ene ste caso seria el main
+
+#### Pate 2
+```cpp
+std::cout << "La suma de " << a << " y " << b << " es " << sum(a, b) << "\n";
+```
+* Se ejecuta primero la funcion de "sum", antes de imprimir en la pantalla
+
+#### Parte 3
+Se coloca un breakpoint en:
+```cpp
+int a = 5;
+```
+* 
 
 
 ```cpp
@@ -60,7 +95,7 @@ int main() {
 ```
 
 ### Actividad 2
-```
+```cpp
 #include <iostream>
 
 using namespace std;
@@ -112,4 +147,5 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
