@@ -106,7 +106,112 @@ int main() {
 }
 ```
 
-### Actividad 2
+### Actividad 2 Notas
+### Paso por valor y paso por referencia
+```cpp
+#include <iostream>
+
+using namespace std;
+
+// Función que modifica el parámetro pasado por valor
+void modificarPorValor(int n) {
+    cout << "Dentro de modificarPorValor, valor inicial: " << n << endl;
+    n += 5;
+    cout << "Dentro de modificarPorValor, valor modificado: " << n << endl;
+}
+
+// Función que modifica el parámetro pasado por referencia
+void modificarPorReferencia(int &n) {
+    cout << "Dentro de modificarPorReferencia, valor inicial: " << n << endl;
+    n += 5;
+    cout << "Dentro de modificarPorReferencia, valor modificado: " << n << endl;
+}
+
+// Función que modifica el parámetro utilizando punteros
+void modificarPorPuntero(int *n) {
+    cout << "Dentro de modificarPorPuntero, valor inicial: " << *n << endl;
+    *n += 5;
+    cout << "Dentro de modificarPorPuntero, valor modificado: " << *n << endl;
+}
+
+int main() {
+    int a = 10;
+    int b = 10;
+    int c = 10;
+
+    cout << "Valor inicial de a (paso por valor): " << a << endl;
+    cout << "Valor inicial de b (paso por referencia): " << b << endl;
+    cout << "Valor inicial de c (paso por puntero): " << c << endl;
+
+    cout << "\nLlamando a modificarPorValor(a)..." << endl;
+    modificarPorValor(a);
+    cout << "Después de modificarPorValor, valor de a: " << a << endl;
+
+    cout << "\nLlamando a modificarPorReferencia(b)..." << endl;
+    modificarPorReferencia(b);
+    cout << "Después de modificarPorReferencia, valor de b: " << b << endl;
+
+    cout << "\nLlamando a modificarPorPuntero(&c)..." << endl;
+    modificarPorPuntero(&c);
+    cout << "Después de modificarPorPuntero, valor de c: " << c << endl;
+
+    return 0;
+}
+```
+#### Parte 1
+Tenemos esta funcion
+```cpp
+void modificarPorValor(int n) {
+    cout << "Dentro de modificarPorValor, valor inicial: " << n << endl;
+    n += 5;
+    cout << "Dentro de modificarPorValor, valor modificado: " << n << endl;
+}
+```
+Y esta llamada desde el main
+```cpp
+int a = 10;
+modificarPorValor(a);
+```
+Despues de ejecutar "modificarPorValor(a)"
+
+¿el valor de a en main cambia o sigue siendo 10?
+R/= No cambia
+En: 
+```cpp
+void modificarPorValor(int n)
+```
+* El parametro "n" es una copia del valor que se envia
+Cuando haces:
+```cpp
+n += 5;
+```
+* Estas modificando la copia, no la variable original "a"
+* Entonces dentro de la funcion pasa de 10 a 15
+* Fuera de la funcion "a" sigue siendo 10
+
+Si dentro de la función se modifica una copia,
+¿por qué la variable original no se ve afectada?
+R/= Porque la copia esta en una direccion de memoria diferente, como sellama la direccion de la copia, por eso cambia la copia y no la original
+* En resumen, son dos variables distintas, tienen ubicaciones distintas y cambiar una no cambia la otra
+
+#### Parte 2
+Ahora mira esta función:
+```cpp
+void modificarPorReferencia(int &n) {
+    n += 5;
+}
+```
+Observa el detalle:
+```cpp
+int &n
+```
+* Esto es una referencia, para darle otro nombre a la misma variable
+* Entonces si modificamos n, tambien modificamos la variable a la que hace referencia
+¿Aquí se crea una copia o no se crea copia?
+R/= 
+
+
+
 ```cpp
 #include <iostream>
 
@@ -159,6 +264,7 @@ int main() {
 
 
 ## Bitácora de reflexión
+
 
 
 
