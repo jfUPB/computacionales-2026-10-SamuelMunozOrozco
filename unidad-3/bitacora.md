@@ -816,59 +816,6 @@ Personaje copiaHeroe = heroe;
 
 #### Evidencias del Depurador
 
-##### Copia Superficial
-
-Ponemos los siguientes breakpoints
-<img width="1365" height="600" alt="image" src="https://github.com/user-attachments/assets/8c038c4f-0819-427b-b3a9-08895d499dd8" />
-
-Identificamos con el primer breakpoint la direccion de memoria de estadisticas
-
-<img width="643" height="23" alt="image" src="https://github.com/user-attachments/assets/e136c50a-2efc-4bc0-bcc9-3c20741cd61a" />
-
-* Ahora vamos a la copia en el siguiente break point y ejecutamos  Personaje copiaHeroe = heroe
-* Comparamos direcciones entre heroe.estadisticas y copiaHeroe.estadisticas
-<img width="642" height="44" alt="image" src="https://github.com/user-attachments/assets/4a08178c-02e9-452a-8152-d6beb808b06f" />
-
-* Como podemos ver, ambas tienen la misma direccion de memoria, por ende es una copia superficial
-
-
-##### Fuga de memoria
-* Agregamos la siguiente linea sin poner su delet
-```cpp
- ~Personaje() {
-     std::cout << "Destructor: muere " << nombre << std::endl;
- }
-```
-* Ponemos los siguientes BreakPoints
-
-<img width="941" height="415" alt="image" src="https://github.com/user-attachments/assets/f539a053-ff38-4711-9f3e-a5afd55d664c" />
-
-* Asi se ve el Autos despues de ejecutar el primer Breakpoint
-
-<img width="962" height="242" alt="image" src="https://github.com/user-attachments/assets/7cdfce1d-e721-487f-a635-5e9d1bde44f2" />
-
-
-* Asi se ve cuando ejecutamos el destructor
-
-<img width="731" height="120" alt="image" src="https://github.com/user-attachments/assets/4c76d97a-d597-4a4f-a665-4d4f440746c8" />
-
-* Lo que nos muestra es que el objeto en el stack desaparece, pero el bloque queda sin liberar, lo que genera una fuag de memoria
-
-<img width="835" height="120" alt="image" src="https://github.com/user-attachments/assets/2f68e618-c119-43e9-b3ef-f2897dfecc38" />
-* Se observa en el depurador que, al ejecutarse el destructor, el objeto en el stack se destruye, pero el bloque dinámico apuntado por estadisticas (0x0000019e22b5410) permanece en memoria. Como no existe un delete[], la memoria queda reservada sin referencia, generando una fuga.
-
-
-
-<img width="1913" height="1189" alt="image" src="https://github.com/user-attachments/assets/c01b2f25-487c-4e6f-a4cc-58f85d74b4ff" />
-
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/7abe68d3-f060-46d3-9dca-7e8de3d8474e" />
-
-
-
-En el depurador se observa que durante la ejecución del destructor, el objeto en el stack (this) está siendo destruido, pero el puntero estadisticas aún apunta a la dirección 0x000001599e924830 en el heap.
-En la ventana Memory 1 se evidencia que el bloque dinámico continúa existiendo después de que el destructor se ejecuta.
-Como no existe delete[], la memoria queda reservada sin liberarse, generando una fuga de memoria.
-
 
 
 
@@ -879,6 +826,7 @@ Como no existe delete[], la memoria queda reservada sin liberarse, generando una
 
 
 ## Bitácora de reflexión
+
 
 
 
