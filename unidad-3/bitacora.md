@@ -480,7 +480,117 @@ Aquí:
 Personaje* heroe = new Personaje("Aragorn", 100, 20, 15);
 ```
 Aquí:
-* Heroe es un puntero
+* Heroe es un puntero (Puntero guarda la direccion de memoria de otra variable)
+* El objeto real vive en Heap
+* No se destruye solo
+* Hay que hacer:
+```cpp
+delete heroe;
+```
+
+#### Que hace el "new" en C++?
+* Reserva memoria en el Heap y devulve la direccion
+Ejemplo:
+```cpp
+int* p = new int;
+```
+¿Qué ocurre aquí?
+* Se reserva espacio en el Heap para un "int"
+* "new" devuelve la direccion de esa memoria
+* Esa direccion se guarda en "p"
+* "p" vive en el Stack
+* El "int" vive en el Heap
+Visualmente:
+```
+STACK:          HEAP:
+p  --------->   [ ??? ]
+```
+Si luego haces:
+```cpp
+*p = 50;
+```
+Ahora en heap tienes:
+```
+STACK:          HEAP:
+p  --------->   [ 50 ]
+```
+
+##### Con objeto
+```cpp
+Punto* p = new Punto(10, 20);
+```
+Aquí:
+* "p" (puntero) existe en el Stack
+* El objeto (Punto) existe en el Heap
+* El constructor se ejecuta
+* El objeto no se destruira solo
+
+#### Que pasa si no haces "delete"?
+Si haces:
+```cpp
+int* p = new int;
+```
+pero nunca haces:
+```cpp
+delete p;
+```
+Entonces:
+* La memoria queda ocupada
+* El programa pierde la direccion
+* Ya no se puede acceder a ella
+* Esa memoria no se puede volver a utilizar
+* Se produce una fuga de memoria
+Ejemplo:
+```cpp
+void f() {
+    int* p = new int;
+}
+```
+Cuando la función termina:
+* "p" desaparece del Stack
+* Pero el "int" en Heap sigue ahi
+* Ya no tienes como acceder a el
+* Fuga de memoria
+
+#### Que es la fuga de memoria?
+Ocurre cuando:
+* Se reserva memoria en el Heap y se pierde la direccion (Cuando no se libera usando delete)
+Ejemplo:
+```cpp
+for(int i = 0; i < 1000; i++) {
+    int* p = new int;
+}
+```
+Cada iteración:
+* Reserva memoria
+* Nunca la librera
+Resultado:
+* El programa consume cada vez mas RAM
+* Puede volverse lento y colapsar el programa
+* Crashear al computador
+##### Diferencias importantes
+Esto NO es fuga:
+```cpp
+int x = 5;
+```
+* Porque "x" vive en el STACK y se borra solo
+Esto SÍ puede ser fuga:
+```cpp
+int* p = new int;
+```
+* Si no haces "delete"
+##### Regla fundamental
+* Su usas "new" debes usar "delete"
+* Si usas new[], debes usar delete[]
+Ejemplo correcto:
+```cpp
+int* arr = new int[5];
+delete[] arr;
+```
+
+
+
+
 
 
 
@@ -489,6 +599,7 @@ Aquí:
 
 
 ## Bitácora de reflexión
+
 
 
 
