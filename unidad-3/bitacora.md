@@ -845,7 +845,8 @@ Identificamos con el primer breakpoint la direccion de memoria de estadisticas
 
 * Asi se ve el Autos despues de ejecutar el primer Breakpoint
 
-<img width="717" height="208" alt="image" src="https://github.com/user-attachments/assets/fd1b95d8-c227-437c-aef4-dd980819d1bc" />
+<img width="962" height="242" alt="image" src="https://github.com/user-attachments/assets/7cdfce1d-e721-487f-a635-5e9d1bde44f2" />
+
 
 * Asi se ve cuando ejecutamos el destructor
 
@@ -856,6 +857,18 @@ Identificamos con el primer breakpoint la direccion de memoria de estadisticas
 <img width="835" height="120" alt="image" src="https://github.com/user-attachments/assets/2f68e618-c119-43e9-b3ef-f2897dfecc38" />
 * Se observa en el depurador que, al ejecutarse el destructor, el objeto en el stack se destruye, pero el bloque dinámico apuntado por estadisticas (0x0000019e22b5410) permanece en memoria. Como no existe un delete[], la memoria queda reservada sin referencia, generando una fuga.
 
+<img width="1893" height="970" alt="image" src="https://github.com/user-attachments/assets/923385d8-ab1c-46b5-8b9e-100aaf4a991a" />
+
+<img width="1913" height="1189" alt="image" src="https://github.com/user-attachments/assets/c01b2f25-487c-4e6f-a4cc-58f85d74b4ff" />
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/7abe68d3-f060-46d3-9dca-7e8de3d8474e" />
+
+
+
+En el depurador se observa que durante la ejecución del destructor, el objeto en el stack (this) está siendo destruido, pero el puntero estadisticas aún apunta a la dirección 0x000001599e924830 en el heap.
+En la ventana Memory 1 se evidencia que el bloque dinámico continúa existiendo después de que el destructor se ejecuta.
+Como no existe delete[], la memoria queda reservada sin liberarse, generando una fuga de memoria.
+
+
 
 
 
@@ -865,6 +878,7 @@ Identificamos con el primer breakpoint la direccion de memoria de estadisticas
 
 
 ## Bitácora de reflexión
+
 
 
 
