@@ -761,15 +761,87 @@ Entonces:
 
 
 
-
-
-
-
 ## Bitácora de aplicación 
+
+### Actividad de Aplicacion
+
+#### Error 1
+* Hay una fuga de memoria en la siguiente parte del codigo
+```cpp
+class Personaje {
+public:
+    std::string nombre;
+    int* estadisticas;
+
+    Personaje(std::string n, int vida, int ataque, int defensa) {
+        nombre = n;
+        estadisticas = new int[3];
+        estadisticas[0] = vida;
+        estadisticas[1] = ataque;
+        estadisticas[2] = defensa;
+    }
+};
+```
+##### Cual es el error?
+* La clase usa "new int[3]", pero no tiene destructor que haga "delete[] estadisticas"
+
+##### Porque occurre esto/
+* El personaje esta en el Stack y las estadisticas en el Heap
+* Cuando "simularEncuentro()" termina, el objeto "heroe" se destruye en el Stack, pero el arreglo en el Heap no se libera
+* Se pierde la direccion y la memoria queda ocupada
+
+##### Consecuencias
+* Hay fuga de memoria
+* Se ejecuta varias veces y hay consumo de RAM constante, lo que lo puede Crashear
+
+#### Error 2
+* Copia superficial
+En la siguiente parte:
+```cpp
+Personaje copiaHeroe = heroe;
+```
+
+##### Cual es el error?
+* El constructor de copia, copia por defecto a el puntero y no la memoria
+
+##### Porque pasa?
+* El compilador, automaticamente crea un contructor de copia
+* Este copia el "nombre" y las "estadisticas" (copia las direcciones)
+* Pero NO crea un nuevo arreglo
+* Entonces heroe.estadisticas y copiaHeroe.estadisticas, van al mismo Heap
+
+##### Consecuencias
+* Si uno modifica las estadisticas, va a afectar al otro
+* Si se pone el destructos, se borran ambos y hay doble liberacion de memoria y puede Crashear
+
+#### Evidencias del Depurador
+
+##### Copia Superficial
+
+Ponemos los siguientes breakpoints
+<img width="1365" height="600" alt="image" src="https://github.com/user-attachments/assets/8c038c4f-0819-427b-b3a9-08895d499dd8" />
+Identificamos con el primer breakpoint la direccion de memoria de estadisticas
+<img width="643" height="23" alt="image" src="https://github.com/user-attachments/assets/e136c50a-2efc-4bc0-bcc9-3c20741cd61a" />
+
+* Ahora vamos a la copia en el siguiente break point y ejecutamos  Personaje copiaHeroe = heroe
+* Comparamos direcciones entre heroe.estadisticas y copiaHeroe.estadisticas
+<img width="642" height="44" alt="image" src="https://github.com/user-attachments/assets/4a08178c-02e9-452a-8152-d6beb808b06f" />
+* Como podemos ver, ambas tienen la misma direccion de memoria, por ende es una copia superficial
+
+
+
+
+<img width="836" height="94" alt="image" src="https://github.com/user-attachments/assets/730d7fd2-44d1-4a60-aca7-481f94449748" />
+* Aqui se puede ver que tanto "heroe" como "copiaHeroe" tienen la misma direccion de memoria en Heap, lo que muestra que el cosntructor de copia por defecto, realizo una copia superficial del puntero
+
+##### Fuga de memoria
+
+
 
 
 
 ## Bitácora de reflexión
+
 
 
 
