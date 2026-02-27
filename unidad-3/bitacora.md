@@ -820,27 +820,52 @@ Personaje copiaHeroe = heroe;
 
 Ponemos los siguientes breakpoints
 <img width="1365" height="600" alt="image" src="https://github.com/user-attachments/assets/8c038c4f-0819-427b-b3a9-08895d499dd8" />
+
 Identificamos con el primer breakpoint la direccion de memoria de estadisticas
+
 <img width="643" height="23" alt="image" src="https://github.com/user-attachments/assets/e136c50a-2efc-4bc0-bcc9-3c20741cd61a" />
 
 * Ahora vamos a la copia en el siguiente break point y ejecutamos  Personaje copiaHeroe = heroe
 * Comparamos direcciones entre heroe.estadisticas y copiaHeroe.estadisticas
 <img width="642" height="44" alt="image" src="https://github.com/user-attachments/assets/4a08178c-02e9-452a-8152-d6beb808b06f" />
+
 * Como podemos ver, ambas tienen la misma direccion de memoria, por ende es una copia superficial
 
 
-
-
-<img width="836" height="94" alt="image" src="https://github.com/user-attachments/assets/730d7fd2-44d1-4a60-aca7-481f94449748" />
-* Aqui se puede ver que tanto "heroe" como "copiaHeroe" tienen la misma direccion de memoria en Heap, lo que muestra que el cosntructor de copia por defecto, realizo una copia superficial del puntero
-
 ##### Fuga de memoria
+* Agregamos la siguiente linea sin poner su delet
+```cpp
+ ~Personaje() {
+     std::cout << "Destructor: muere " << nombre << std::endl;
+ }
+```
+* Ponemos los siguientes BreakPoints
+
+<img width="941" height="415" alt="image" src="https://github.com/user-attachments/assets/f539a053-ff38-4711-9f3e-a5afd55d664c" />
+
+* Asi se ve el Autos despues de ejecutar el primer Breakpoint
+
+<img width="717" height="208" alt="image" src="https://github.com/user-attachments/assets/fd1b95d8-c227-437c-aef4-dd980819d1bc" />
+
+* Asi se ve cuando ejecutamos el destructor
+
+<img width="731" height="120" alt="image" src="https://github.com/user-attachments/assets/4c76d97a-d597-4a4f-a665-4d4f440746c8" />
+
+* Lo que nos muestra es que el objeto en el stack desaparece, pero el bloque queda sin liberar, lo que genera una fuag de memoria
+
+<img width="835" height="120" alt="image" src="https://github.com/user-attachments/assets/2f68e618-c119-43e9-b3ef-f2897dfecc38" />
+* Se observa en el depurador que, al ejecutarse el destructor, el objeto en el stack se destruye, pero el bloque dinámico apuntado por estadisticas (0x0000019e22b5410) permanece en memoria. Como no existe un delete[], la memoria queda reservada sin referencia, generando una fuga.
+
+
+
+
 
 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
