@@ -857,9 +857,10 @@ Identificamos con el primer breakpoint la direccion de memoria de estadisticas
 <img width="835" height="120" alt="image" src="https://github.com/user-attachments/assets/2f68e618-c119-43e9-b3ef-f2897dfecc38" />
 * Se observa en el depurador que, al ejecutarse el destructor, el objeto en el stack se destruye, pero el bloque dinámico apuntado por estadisticas (0x0000019e22b5410) permanece en memoria. Como no existe un delete[], la memoria queda reservada sin referencia, generando una fuga.
 
-<img width="1893" height="970" alt="image" src="https://github.com/user-attachments/assets/923385d8-ab1c-46b5-8b9e-100aaf4a991a" />
+
 
 <img width="1913" height="1189" alt="image" src="https://github.com/user-attachments/assets/c01b2f25-487c-4e6f-a4cc-58f85d74b4ff" />
+
 <img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/7abe68d3-f060-46d3-9dca-7e8de3d8474e" />
 
 
@@ -878,6 +879,7 @@ Como no existe delete[], la memoria queda reservada sin liberarse, generando una
 
 
 ## Bitácora de reflexión
+
 
 
 
