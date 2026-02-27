@@ -419,11 +419,77 @@ int main() {
 ```
 
 
+### Notas Y conceptos Importantes
+
+#### Que es el Stack?
+* Region de memoria que se gestiona automaticamente
+* Guarda variables locales
+* Guarda parametros de funciones
+  -  Los parametros son lo que la funcion espera recibir
+* Guarda objetos creados "normalmente"
+  - Ej: Persona p1 (Objeto creado normalmente)
+  - p1 es un objeto directo (No guarda la direccion de memoria, pero si el objeto completo. El       objeto ocupa la memoria directamente)
+  - No usamos new
+  - Se guarda en el Stack
+  - Se destruye automaticamente cuando termina el bloque
+* Se limpia solo cuando sales del bloque o de la funcion
+Ejemplo:
+```cpp
+int x = 10;
+```
+x vive en el stack
+Si haces:
+```cpp
+void f() {
+    int y = 5;
+}
+```
+"y" existe solo mientras f() se está ejecutando. Cuando f() termina desaparece automáticamente.
+
+#### Que es el Heap
+* Region de memoria que se gestiona manualmente
+* Se usa con new
+* NO se limpia automaticamente
+* Existe hasta que hagas delete
+Ejemplo:
+```cpp
+int* p = new int;
+```
+* Aqui "p" vive en el stack
+* El "int" creado vive en el heap
+Si no haces:
+```cpp
+delete p;
+```
+* La memoria queda ocupada
+* Eso es una fuga de memoria (Cuando el espacio de memoria queda ocupado y no se libera con el "delete")
+
+#### Diferencias entre objeto stack y objeto heap
+##### Objeto en Stack
+```cpp
+Personaje heroe("Aragorn", 100, 20, 15);
+```
+Aquí:
+* Heroe es el objeto
+* Vive en el Stack
+* Se destruye automaticamente al salir del bloque
+* El destructor se llama solo
+
+##### Objeto en heap
+```cpp
+Personaje* heroe = new Personaje("Aragorn", 100, 20, 15);
+```
+Aquí:
+* Heroe es un puntero
+
+
+
 ## Bitácora de aplicación 
 
 
 
 ## Bitácora de reflexión
+
 
 
 
