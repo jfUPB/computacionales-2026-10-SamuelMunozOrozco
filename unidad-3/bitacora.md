@@ -684,6 +684,81 @@ Si agregas destructor:
 #### RECORDAR
 * Si en una clase tiene un puntero como miembro, el constructor de copia automatica puede ser peligroso, proque  solo copia la direccion de memoria
 
+#### Que pasa cuando una funcion termina (destruccion automatica)?
+* Todas las variables locales del Stack se destruyen automaticamente
+Ejemplo:
+```cpp
+void f() {
+    int x = 10;
+}
+```
+* Cuando "f()" termina, "x" desaparece
+* La memoria del Stack se limpia sola
+
+##### Con objetos
+```cpp
+void f() {
+    Punto p(10, 20);
+}
+```
+* Cunado "f()" termina se llama automaticamente al destructor de "p" y luego se libera la memoria en el Stack
+
+#### Que ocurre si NO defines destructor?
+Si tu clase no tiene destructor:
+```cpp
+class A {
+public:
+    int x;
+};
+```
+* El compilador crea uno por defecto y destruye los miembros automaticamente
+Esto esta bien si:
+* Tu clase no usa "new"
+* No maneja memoria manual
+
+##### Pero si tu clase usa "ew"
+Ejemplo:
+```cpp
+class A {
+public:
+    int* p;
+
+    A() {
+        p = new int(10);
+    }
+};
+```
+Si no defines el destructor:
+* La memoria reservada NO sera liberada
+* Cada objeto genera una fuga de memoria
+* El compilador NO sabe que debe hacer "delete"
+
+#### Que ocurre cuando el compilador genera el constructor de copia por defecto?
+Si no defines constructor de copia:
+```cpp
+A b = a;
+```
+* El compilador genera uno automaticamente
+* El constructor copia miembro por miembro
+* Hace copia superficial
+* Copia punteros como direcciones
+* NO crea nueva memoria
+Ejemplo:
+```cpp
+class A {
+public:
+    int* p;
+};
+```
+Si haces:
+```cpp
+A a;
+A b = a;
+```
+Entonces:
+* "b.p = a.p"
+* Ambos apuntan al mismo bloque
+
 
 
 
@@ -695,6 +770,7 @@ Si agregas destructor:
 
 
 ## Bitácora de reflexión
+
 
 
 
