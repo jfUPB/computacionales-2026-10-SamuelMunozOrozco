@@ -588,6 +588,102 @@ int* arr = new int[5];
 delete[] arr;
 ```
 
+#### Que es un miembro de una clase?
+* Es simplemente una variable que pertenece a la clase
+Ejemplo:
+```cpp
+class Personaje {
+public:
+    std::string nombre;   // miembro
+    int* estadisticas;    // miembro
+};
+```
+* Cada objeto de tipo "Personaje" tendra esos miembros
+Por ejemplo, si creas:
+```cpp
+Personaje p;
+```
+* Ahora "p" tiene
+  - p.nombre
+  - p.estadisticas
+
+#### Que pasa cuando copias un objeto que tiene un puntero como miembro?
+Supongamos esto:
+```cpp
+class Ejemplo {
+public:
+    int* dato;
+
+    Ejemplo(int v) {
+        dato = new int(v);
+    }
+};
+```
+Y haces:
+```cpp
+Ejemplo a(10);
+Ejemplo b = a;
+```
+* El compilador crea una copia autoamtica
+* PERO copia el puntero, NO copia la memoria apuntada
+Entonces:
+```
+STACK:
+a.dato --------\
+                 \
+                  ----> HEAP: [ 10 ]
+                 /
+b.dato --------/
+```
+* Estan apuntando al mismo bloque de memoria
+
+#### Que significa "copia superficial" (shallow copy)?
+* Es cuando se copian los valores tal cual
+* Incluyendo las direcciones de los punteros
+* Pero NO se crea una nueva memoria
+Ejemplo:
+```cpp
+Ejemplo a(10);
+Ejemplo b = a;
+```
+* "b.dato" no tiene su propio "int"
+* Solo apunta al mismo "int" de "a"
+* Eso es una copia superficial
+
+##### Que seria un copia profunda (deep Copy)?
+Sería esto:
+```cpp
+b.dato = new int(*a.dato);
+```
+* Ahora cada objeto tiene su propia memoria
+* No comparten Heap y son indpendientes uno del otro
+
+#### Que ocurre cuando dos objetos apuntan al mismo bloque de Heap?
+##### Problema 1 — Modificación compartida
+Si haces:
+```cpp
+*b.dato = 50;
+```
+* Tambien cambia "a.dato"
+* Porque ambos apuntan al mismo lugar
+
+##### Problema 2 — Double delete
+Si agregas destructor:
+```cpp
+~Ejemplo() {
+    delete dato;
+}
+```
+* Se destruye "b" liberando la memoria
+* Se destruye "a" liberando la misma memoria y crasheando el codigo
+
+##### Problema 3 — Dangling pointer
+* Despues del primer "delete" la memoria ya no es valida
+* El segundo objeto tiene un puntero que qpunta a la memoria ya liberada
+
+#### RECORDAR
+* Si en una clase tiene un puntero como miembro, el constructor de copia automatica puede ser peligroso, proque  solo copia la direccion de memoria
+
 
 
 
@@ -599,6 +695,7 @@ delete[] arr;
 
 
 ## Bitácora de reflexión
+
 
 
 
