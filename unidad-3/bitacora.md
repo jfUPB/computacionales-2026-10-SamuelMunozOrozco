@@ -1,3 +1,6 @@
+Nota del profesor: la evidencia de la fase de aplicación no muestra trabajo de depuración, no hay capturas. El estudiante no asiste a la sustentación
+
+
 # Unidad 3
 
 ## Bitácora de proceso de aprendizaje
@@ -826,6 +829,7 @@ Personaje copiaHeroe = heroe;
 
 
 ## Bitácora de reflexión
+
 
 
 
