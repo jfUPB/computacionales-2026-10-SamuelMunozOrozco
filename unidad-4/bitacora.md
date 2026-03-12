@@ -26,6 +26,7 @@ Esto demuestra que la cola esta vacia antes de insertarla, ya que al tener front
 #### Pantallazo 3
 <img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/93eca487-8b1b-496a-bac3-71cdbadc6dbb" />
 Al ejecutar la linea:
+
 ```cpp
 Node * newNode = new Node(x, y, radius, color, opacity);
 ```
@@ -56,6 +57,7 @@ Y en el siguiente, si lo expandimos a front, rear y newNode, podemos ver que tie
 
 
 ## Bitácora de reflexión
+
 
 
 
