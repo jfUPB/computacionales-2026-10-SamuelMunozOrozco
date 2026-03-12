@@ -21,23 +21,28 @@ rear = NULL
 
 size = 0
 
-Esto demuestra que la cola esta vacia antes de insertarla, ya que al tener front y rear, en NULL, eso significa que no hay ningun nodo y el size=0, es porque como no hay nodos, pues no hay como ponerle valor a size
+Esto demuestra que la cola esta vacia antes de insertarla, ya que al tener front y rear, en NULL, eso significa que no hay ningun nodo y el size=0, indica que la cola no tiene nodos ahora mismo
+
 
 #### Pantallazo 3
 <img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/93eca487-8b1b-496a-bac3-71cdbadc6dbb" />
+
+
+#### Pantallazo 4
+
 Al ejecutar la linea:
 
 ```cpp
 Node * newNode = new Node(x, y, radius, color, opacity);
 ```
-
-#### Pantallazo 4
-Se crea un nuevo node, que se puede evidenciar en el Autos que se guardo correctamente en la memoria
+Se crea un nuevo node "newNode". Se puede ver que se guardo correctamente en la memoria por la direccion de memoria que podemos ver, y si lo expandimos se pueden observar sus atributos
 <img width="1844" height="145" alt="image" src="https://github.com/user-attachments/assets/3141317a-665e-463d-80cd-623d0f6b0ba5" />
 
+
 #### Pantallazo 5
-En el siguiente pantallazo se puede ver que ahora front y rear tienen la misma direccion, lo que evidencia que apuntan al mismo nodo
 <img width="1918" height="1143" alt="image" src="https://github.com/user-attachments/assets/368ba9df-cbe4-4c82-b37c-86e4ea69cb93" />
+En este pantallazo se puede evidenciar que le front y el rear tienen la misma direccion de memoria, lo que quiere decir que ambos apuntan al mismo nodo
+
 
 #### Pantallazo 6
 Y en el siguiente, si lo expandimos a front, rear y newNode, podemos ver que tienen los mismos valores en x, y, radius, color, etc.
@@ -57,6 +62,7 @@ Y en el siguiente, si lo expandimos a front, rear y newNode, podemos ver que tie
 
 
 ## Bitácora de reflexión
+
 
 
 
