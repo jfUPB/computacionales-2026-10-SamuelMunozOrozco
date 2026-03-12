@@ -44,9 +44,6 @@ Se crea un nuevo node "newNode". Se puede ver que se guardo correctamente en la 
 En este pantallazo se puede evidenciar que le front y el rear tienen la misma direccion de memoria, lo que quiere decir que ambos apuntan al mismo nodo
 
 
-#### Pantallazo 6
-Y en el siguiente, si lo expandimos a front, rear y newNode, podemos ver que tienen los mismos valores en x, y, radius, color, etc.
-<img width="1820" height="464" alt="image" src="https://github.com/user-attachments/assets/6dafcfb4-2ca1-4ea3-a450-7d45f4f3e721" />
 
 
 
@@ -62,6 +59,7 @@ Y en el siguiente, si lo expandimos a front, rear y newNode, podemos ver que tie
 
 
 ## Bitácora de reflexión
+
 
 
 
