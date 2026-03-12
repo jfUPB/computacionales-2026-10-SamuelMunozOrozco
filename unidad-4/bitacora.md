@@ -60,3 +60,4 @@ Y en el siguiente, si lo expandimos a front, rear y newNode, podemos ver que tie
 
 
 
+
