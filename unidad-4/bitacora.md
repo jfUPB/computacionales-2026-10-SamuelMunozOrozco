@@ -29,6 +29,7 @@ Al ejecutar la linea:
 ```cpp
 Node * newNode = new Node(x, y, radius, color, opacity);
 ```
+
 #### Pantallazo 4
 Se crea un nuevo node, que se puede evidenciar en el Autos que se guardo correctamente en la memoria
 <img width="1844" height="145" alt="image" src="https://github.com/user-attachments/assets/3141317a-665e-463d-80cd-623d0f6b0ba5" />
@@ -55,6 +56,7 @@ Y en el siguiente, si lo expandimos a front, rear y newNode, podemos ver que tie
 
 
 ## Bitácora de reflexión
+
 
 
 
