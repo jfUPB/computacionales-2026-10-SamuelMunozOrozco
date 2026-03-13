@@ -251,6 +251,188 @@ size--;
 ```
 La cola disminuye
 
+#### Tercero clear()
+```cpp
+void BrushQueue::clear() {
+
+    while (front != nullptr) {
+        dequeue();
+    }
+
+}
+```
+Como ya tenemos una funcion que usa un nodo, pues la reutilizamos usando un while que recorra toda la cola preguntando si front es null, hasta que sea null y se elimine toda la cola
+
+
+#### Cuarto isEmpty()
+```cpp
+bool BrushQueue::isEmpty() {
+    return front == nullptr;
+}
+```
+Esto solo responde a la pregunta de si la cola esta vacia o no.
+
+
+#### Quinto update()
+```cpp
+void ofApp::update() {
+    backgroundHue += 0.2;
+    if (backgroundHue > 255) backgroundHue = 0;
+
+    if (ofGetMousePressed()) {
+
+        float x = ofGetMouseX();
+        float y = ofGetMouseY();
+
+        float radius = ofRandom(5, 20);
+
+        ofColor color;
+        color.setHsb(ofRandom(255), 200, 255);
+
+        float opacity = ofRandom(50, 200);
+
+        strokes.enqueue(x, y, radius, color, opacity);
+    }
+}
+```
+* Detectar si el mouse es presionado
+```cpp
+if (ofGetMousePressed())
+```
+Permite dibujar mientras se presiona el mouse
+
+* Posicion del mouse
+```cpp
+float x = ofGetMouseX();
+float y = ofGetMouseY();
+```
+La posicion del circulo que se dibuja
+
+* Rdio aleatorio del circulo
+```cpp
+float radius = ofRandom(5, 20);
+```
+
+* Color aleatorio del circulo
+```cpp
+ofColor color;
+color.setHsb(ofRandom(255), 200, 255);
+```
+
+* Opacidad
+```cpp
+float opacity = ofRandom(50, 200);
+```
+
+* Guardar el trazo en la cola
+```cpp
+strokes.enqueue(x, y, radius, color, opacity);
+```
+Cada movimiento del mouse crea un nuevo nodo en la cola
+
+#### Sexto draw()
+```cpp
+void ofApp::draw() {
+    // Fondo con gradiente dinámico
+    ofColor color1, color2;
+    color1.setHsb(backgroundHue, 150, 240);
+    color2.setHsb(fmod(backgroundHue + 128, 255), 150, 240);
+    ofBackgroundGradient(color1, color2, OF_GRADIENT_LINEAR);
+
+    Node* current = strokes.front;
+
+    while (current != nullptr) {
+
+        ofSetColor(current->color, current->opacity);
+
+        ofDrawCircle(current->x, current->y, current->radius);
+
+        current = current->next;
+    }
+}
+```
+
+* Empezamos con el primer nodo de la cola
+```cpp
+Node* current = strokes.front;
+```
+Apunta al nodo mas antiguo
+
+* Recorremos la cola
+```cpp
+while(current != nullptr)
+```
+Sigue hasta llegar al final de la cola
+
+* Usamos el color guardado del nodo
+```cpp
+ofSetColor(current->color, current->opacity);
+```
+Le da a cada nodo un color y una opacidad
+
+* Dibujamos el circulo
+```cpp
+ofDrawCircle(current->x, current->y, current->radius);
+```
+Usamos los datos guardados en el nodo
+
+* Avanzamos al siguiente nodo
+```cpp
+current = current->next;
+```
+Recorre toda la cola
+
+
+#### Septima keyPressed()
+```cpp
+void ofApp::keyPressed(int key) {
+
+    if (key == 'c') {
+        strokes.clear();
+    }
+
+    if (key == 'a') {
+
+        if (strokes.maxSize == 50) {
+            strokes.maxSize = 100;
+        }
+        else {
+            strokes.maxSize = 50;
+        }
+    }
+
+    else if (key == 's') {
+        ofSaveFrame();
+    }
+}
+```
+La logica de las teclas
+
+* Tecla C
+```cpp
+strokes.clear();
+```
+Llama a la funcion que elimina todos los nodos de la cola
+
+* Tecla A
+```cpp
+if (strokes.maxSize == 50)
+    strokes.maxSize = 100;
+else
+    strokes.maxSize = 50;
+```
+Hace que la cola cambia de tamaño, entre 50 a 100 y de 100 a 50
+
+* Tecla S
+```cpp
+ofSaveFrame();
+```
+Toma una captura de pantalla del programa
+
+
+
+
+
 
 
 ## Bitácora de aplicación 
