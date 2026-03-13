@@ -115,15 +115,25 @@ En este pantallazo ejecutamos hasta la linea "current = current->next;" y aun se
 Ademas podemos ver que los punteros front y rear se mantienen igual, con las mismas direcciones, lo que demuestra que el recorrido funciona sin destruir o eliminar nigun nodo
 
 
+### Evidencia 6: limpieza total de la memoria (clear)
+Ponemos un breakpoint en la linea "	while (front != nullptr) {" para asi cuando creemos la cola en la pantalla e intentemos borrarla con c, se detenga ahi el programa
+<img width="1919" height="1143" alt="image" src="https://github.com/user-attachments/assets/1e0d208a-ffc7-408e-8e61-22260a7df9a0" />
+En el pantallazo podemos ver a front y rear cpn direcciones de memoria validas, y size con un valor valido, esto demuestra que hay nodos en la cola antes de borrarlos
+
+Luego hundimos F10 para estar encima de la linea "dequeue()" y hundimos F11 para entrar a la funcion donde esta toda la logica de borrado
+<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/ea830269-3f80-4889-81c9-965dda1d1cf9" />
+
+
+
+
+
+
+
  
 
 
-
-
-
-
-
 ## Bitácora de reflexión
+
 
 
 
