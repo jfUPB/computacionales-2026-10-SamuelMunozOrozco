@@ -95,6 +95,7 @@ En el mismo pantallazo podemos evidenciar la primera evidencia. En el Autos pode
 Luego oprimirmos F10 para estar sobre la linea "dequeue();" y luego hundimos F11 para entrar a la funcion dequeue();. Lo que nos evidencia que cuando se supera el limite permitido de la cola se llama automaticamente a la funcion encargada de eliminar los nodos, que es dequeue()
 
 
+### Evidencia 5: recorrido de la cola sin destruirla (draw)
 
 
 
@@ -102,3 +103,4 @@ Luego oprimirmos F10 para estar sobre la linea "dequeue();" y luego hundimos F11
 
 
 ## Bitácora de reflexión
+
