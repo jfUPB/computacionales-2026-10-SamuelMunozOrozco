@@ -103,12 +103,19 @@ while(current != nullptr)
 ```
 
 <img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/45dcc36b-5708-40f2-957d-b20a927eb092" />
+Se coloco el breakpoint en es alinea para ver el estado de la cola antes de iniciar el recorrido. El pantallazo demuestra que el recorrido empieza desde el primer nodo ya que front tiene una direccion de memoria valida. Y atmbien tenemos el size de valor 50 que confirma que existen nodos almacenados
 
 <img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/79d4f972-f753-4342-befe-67e416bb44c6" />
+El pantallazo muestra que draw() recorre la cola nodo por nodo usando el puntero temporal current. Como se puede ver, current tiene la misma direccion de memoria que front, lo que nos muestra que el recorrido comienza desde el primer nodo. Y con e ciclo "while(current != nullptr)" nos deja recorrer cada nodo de la cola
+
 
 <img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/c98c7dfc-6861-4f03-ac19-4ef15595e62b" />
+En este pantallazo ejecutamos hasta la linea "current = current->next;" y aun seguimos en el ciclo while, lo que significa que el programa esta recorriendo cada nodo de la cola. En el panel de Autos, se puede observar que current apunta a un nodo y que current->next apunta al siguiente, lo que indica que el recorrido funciona correctamente
+
+Ademas podemos ver que los punteros front y rear se mantienen igual, lo que demuestra que el recorrido funciona sin destruir o eliminar nigun nodo
 
 
+ 
 
 
 
@@ -117,4 +124,5 @@ while(current != nullptr)
 
 
 ## Bitácora de reflexión
+
 
