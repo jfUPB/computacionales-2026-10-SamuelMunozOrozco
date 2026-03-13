@@ -61,6 +61,7 @@ Como se puede ver, el rear ya tiene direccion de memoria, por ende apunta a un n
 Ahora para conectar los nodos, presionamos F10 sobre la linea "rear->next = newNode;" luego otra vez F10 sonbre "rear = newNode;" para actualizar el rear para que ahora el nuevo nodo sea el ultimo de la cola
 
 <img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/1d4df7ba-2d82-41a4-abd4-69fd20c8db42" />
+Aqui al mirar a front y rear podemos evidenciar que ya tienen diferentes direcciones de memoria, lo que significan que no apuntan a lo mismo, y tambien que el newNode tiene la misma direccion que rear, lo que quiere decir que ya el nuevo nodo esta al final de la cola
 
 
 
@@ -84,4 +85,5 @@ Ahora para conectar los nodos, presionamos F10 sobre la linea "rear->next = newN
 
 
 ## Bitácora de reflexión
+
 
