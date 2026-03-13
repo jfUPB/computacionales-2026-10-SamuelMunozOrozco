@@ -565,15 +565,9 @@ Que son las que borraran un nodo y reduciran el tamaño de la cola
 <img width="1919" height="1145" alt="image" src="https://github.com/user-attachments/assets/a9a3f2dd-1549-4644-ad40-6d10beba81b6" />
 Como se puede ver front tiene una direccion diferente y size disminuyo a 49, lo que nos demuestra que el nodo fue eliminado y la memoria liberada
 
-
-
-
-
-
- 
-
-
 ## Bitácora de reflexión
+
+
 
 
 
