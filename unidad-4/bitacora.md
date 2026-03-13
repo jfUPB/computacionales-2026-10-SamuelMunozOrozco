@@ -96,23 +96,23 @@ Luego oprimirmos F10 para estar sobre la linea "dequeue();" y luego hundimos F11
 
 
 ### Evidencia 5: recorrido de la cola sin destruirla (draw)
-<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/542c7443-e083-43c5-a7c9-29f2ce73b8c6" />
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/fbddd712-f79e-4201-bd36-1d6ac777f960" />
 Se pone el breakpoint en esa linea ya que es el punto donde empieza el recorrido de la cola en el draw(). Aqui el sistema toma el puntero front que apunta al primer nodo y lo asigna a un puntero temporal llamado current, que sera utilizado para recorrer todos los nodos de la cola, mediante un ciclo:
 ```cpp
 while(current != nullptr)
 ```
 
-<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/45dcc36b-5708-40f2-957d-b20a927eb092" />
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/dcb9a507-13c5-44cb-8d9d-2161fe9c8a8e" />
 Se coloco el breakpoint en es alinea para ver el estado de la cola antes de iniciar el recorrido. El pantallazo demuestra que el recorrido empieza desde el primer nodo ya que front tiene una direccion de memoria valida. Y atmbien tenemos el size de valor 50 que confirma que existen nodos almacenados
 
-<img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/79d4f972-f753-4342-befe-67e416bb44c6" />
+<img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/c5823182-429e-4815-8336-40a1569fc635" />
 El pantallazo muestra que draw() recorre la cola nodo por nodo usando el puntero temporal current. Como se puede ver, current tiene la misma direccion de memoria que front, lo que nos muestra que el recorrido comienza desde el primer nodo. Y con e ciclo "while(current != nullptr)" nos deja recorrer cada nodo de la cola
 
 
-<img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/c98c7dfc-6861-4f03-ac19-4ef15595e62b" />
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/42e9795e-793f-40a2-b860-0c8d1285404c" />
 En este pantallazo ejecutamos hasta la linea "current = current->next;" y aun seguimos en el ciclo while, lo que significa que el programa esta recorriendo cada nodo de la cola. En el panel de Autos, se puede observar que current apunta a un nodo y que current->next apunta al siguiente, lo que indica que el recorrido funciona correctamente
 
-Ademas podemos ver que los punteros front y rear se mantienen igual, lo que demuestra que el recorrido funciona sin destruir o eliminar nigun nodo
+Ademas podemos ver que los punteros front y rear se mantienen igual, con las mismas direcciones, lo que demuestra que el recorrido funciona sin destruir o eliminar nigun nodo
 
 
  
@@ -124,5 +124,6 @@ Ademas podemos ver que los punteros front y rear se mantienen igual, lo que demu
 
 
 ## Bitácora de reflexión
+
 
 
