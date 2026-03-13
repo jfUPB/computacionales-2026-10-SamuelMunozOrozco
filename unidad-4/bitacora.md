@@ -117,12 +117,21 @@ Ademas podemos ver que los punteros front y rear se mantienen igual, con las mis
 
 ### Evidencia 6: limpieza total de la memoria (clear)
 Ponemos un breakpoint en la linea "	while (front != nullptr) {" para asi cuando creemos la cola en la pantalla e intentemos borrarla con c, se detenga ahi el programa
-<img width="1919" height="1143" alt="image" src="https://github.com/user-attachments/assets/1e0d208a-ffc7-408e-8e61-22260a7df9a0" />
+<img width="1919" height="1143" alt="image" src="https://github.com/user-attachments/assets/6ec3dfbb-ea9b-4a51-9445-9d65f35dfe2a" />
 En el pantallazo podemos ver a front y rear cpn direcciones de memoria validas, y size con un valor valido, esto demuestra que hay nodos en la cola antes de borrarlos
 
-Luego hundimos F10 para estar encima de la linea "dequeue()" y hundimos F11 para entrar a la funcion donde esta toda la logica de borrado
-<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/ea830269-3f80-4889-81c9-965dda1d1cf9" />
+Luego hundimos F10 para estar encima de la linea "dequeue()" y hundimos F11 para entrar a la funcion donde esta toda la logica de borrado y volvemos a hundir F10
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/ad5e1bae-1a88-432c-aa5d-db42b1187e62" />
+Ahi ya podemos ver que front y rear tienen una direccion de memoria valida y size vale 50 lo que indica que hay un trazo creado
 
+Luego hundimos hasta ejecurar las siguientes dos lineas
+```cpp
+	delete temp;
+	size--;
+```
+Que son las que borraran un nodo y reduciran el tamaño de la cola
+<img width="1919" height="1145" alt="image" src="https://github.com/user-attachments/assets/a9a3f2dd-1549-4644-ad40-6d10beba81b6" />
+Como se puede ver front tiene una direccion diferente y size disminuyo a 49, lo que nos demuestra que el nodo fue eliminado y la memoria liberada
 
 
 
@@ -133,6 +142,7 @@ Luego hundimos F10 para estar encima de la linea "dequeue()" y hundimos F11 para
 
 
 ## Bitácora de reflexión
+
 
 
 
