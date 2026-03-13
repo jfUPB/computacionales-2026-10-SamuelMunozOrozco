@@ -96,6 +96,20 @@ Luego oprimirmos F10 para estar sobre la linea "dequeue();" y luego hundimos F11
 
 
 ### Evidencia 5: recorrido de la cola sin destruirla (draw)
+<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/542c7443-e083-43c5-a7c9-29f2ce73b8c6" />
+Se pone el breakpoint en esa linea ya que es el punto donde empieza el recorrido de la cola en el draw(). Aqui el sistema toma el puntero front que apunta al primer nodo y lo asigna a un puntero temporal llamado current, que sera utilizado para recorrer todos los nodos de la cola, mediante un ciclo:
+```cpp
+while(current != nullptr)
+```
+
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/45dcc36b-5708-40f2-957d-b20a927eb092" />
+
+<img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/79d4f972-f753-4342-befe-67e416bb44c6" />
+
+<img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/c98c7dfc-6861-4f03-ac19-4ef15595e62b" />
+
+
+
 
 
 
