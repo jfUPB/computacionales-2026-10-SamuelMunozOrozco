@@ -65,14 +65,15 @@ Aqui al mirar a front y rear podemos evidenciar que ya tienen diferentes direcci
 
 
 ### Evidencia 3: comportamiento de eliminación y prevención de fugas (dequeue)
+<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/f95d4c8b-6c3c-4c04-9c34-9c8cb3c4cd70" />
+Dejamos el breakpoint ahi para que el programa me permita generar nodos en la pantalla, asi esa linea identifique los nodos que va a eliminar
 
+<img width="1919" height="1144" alt="image" src="https://github.com/user-attachments/assets/41d571a4-3031-4fbc-8c85-bdf0dc06a456" />
+Como podemos ver en este pantallazo el front tiene las variables x, y, radius, net, lo que significa que ahi esta el nodo mas viejo. Tambien podemos ver que el size esta en 51, que es el maxSize de la cola y ya podemos eliminar un nodo
 
-
-
-
-
-
-
+Ahora volvemos a hundir F10 para ejecutar la linea "Node* temp = front;" para que asi se guarde la direccion del nodo que vamos a eliminar en temp
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/41ee0ffb-a203-46b3-8fbb-b302ad06d6f3" />
+Como podemos ver, ahora front y temp tienen la misma direccion, lo que demuestra que se guardo el nodo que va a ser eliminado, en temp
 
 
 
@@ -88,6 +89,7 @@ Aqui al mirar a front y rear podemos evidenciar que ya tienen diferentes direcci
 
 
 ## Bitácora de reflexión
+
 
 
 
