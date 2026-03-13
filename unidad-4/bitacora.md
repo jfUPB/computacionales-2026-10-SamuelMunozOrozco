@@ -9,7 +9,7 @@
 
 #### Pantallazo 1
 <img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/a11fcc87-56ba-4f08-977a-acf493f1cbaf" />
-Explicacion de las variables
+Se puso el breakpoint aca ya que queremos ver el estado del programa antes de que se modifique la estructura de datos, o sea, ver como esta la cola antes de poner el primer nodo
 
 #### Pantallazo 2
 <img width="1919" height="1143" alt="image" src="https://github.com/user-attachments/assets/612ac53a-da04-4eb7-9952-10d3200b68cb" />
@@ -59,6 +59,7 @@ En este pantallazo se puede evidenciar que le front y el rear tienen la misma di
 
 
 ## Bitácora de reflexión
+
 
 
 
