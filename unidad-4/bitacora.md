@@ -44,6 +44,31 @@ Se crea un nuevo node "newNode". Se puede ver que se guardo correctamente en la 
 En este pantallazo se puede evidenciar que le front y el rear tienen la misma direccion de memoria, lo que quiere decir que ambos apuntan al mismo nodo
 
 
+### Evidencia 2: mantenimiento del orden FIFO al insertar más nodos (enqueue)
+Ponemos el breakpoint en el mismo lugar
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/01e8923a-76e3-46d0-9685-58330b23c529" />
+Lo que hacemos en entrar en enqueue, ya al estar ahora en la linea "void BrushQueue::enqueue(float x, float y, float radius, ofColor color, float opacity) {". Avanzamos por el codigo usando F10 hasta ejecutar la linea "front = rear = newNode;". Luego volvemos a hundir F5, para volver a entrar a la funcion y ejecutamos la linea "Node* newNode = new Node(...)"
+<img width="1808" height="105" alt="image" src="https://github.com/user-attachments/assets/8d862b5f-dc4f-43ad-9f93-fe487e39d8e7" />
+Aqui podemos evidenciar la direccion de memoria de front y rear que apuntan al nodo y al size con el valor 1 que es el nodo que hay en el momento.
+
+Asi se ve en la pantalla del programa funcionando
+<img width="1018" height="764" alt="image" src="https://github.com/user-attachments/assets/b2d3b2a6-b90d-45cd-ae29-fe5784c3757d" />
+
+Luego hundimos F10 hasta ejecutar la linea "if (rear == nullptr)", como ya hay un nodo y rear ya no es NULL, se ira a else en el codigo y podemos evidenciar lo siguiente:
+<img width="1914" height="1141" alt="image" src="https://github.com/user-attachments/assets/1b707ce2-102e-4143-91c5-4369c9ebeb48" />
+Como se puede ver, el rear ya tiene direccion de memoria, por ende apunta a un nodo, y mas a vajo se puede ver que next es NULL, o sea, que el nodo que hay es el unico en la cola
+
+Ahora para conectar los nodos, presionamos F10 sobre la linea "rear->next = newNode;" luego otra vez F10 sonbre "rear = newNode;" para actualizar el rear para que ahora el nuevo nodo sea el ultimo de la cola
+
+<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/1d4df7ba-2d82-41a4-abd4-69fd20c8db42" />
+
+
+
+
+
+
+
+
 
 
 
@@ -59,12 +84,4 @@ En este pantallazo se puede evidenciar que le front y el rear tienen la misma di
 
 
 ## Bitácora de reflexión
-
-
-
-
-
-
-
-
 
