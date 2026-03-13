@@ -566,13 +566,6 @@ Que son las que borraran un nodo y reduciran el tamaño de la cola
 Como se puede ver front tiene una direccion diferente y size disminuyo a 49, lo que nos demuestra que el nodo fue eliminado y la memoria liberada
 
 
-
-
-
-
- 
-
-
 ## Bitácora de reflexión
 
 
