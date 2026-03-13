@@ -75,6 +75,13 @@ Ahora volvemos a hundir F10 para ejecutar la linea "Node* temp = front;" para qu
 <img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/41ee0ffb-a203-46b3-8fbb-b302ad06d6f3" />
 Como podemos ver, ahora front y temp tienen la misma direccion, lo que demuestra que se guardo el nodo que va a ser eliminado, en temp
 
+Ahora ejecutamos la linea "front = front->next;" Esto para que el front cambie por el siguiente nodo a el que se va a eliminar
+<img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/72a42a39-8c98-4f92-8d8a-9747ffbf8e64" />
+En este pantallazo podemos ver que front y front->next tienen direcciones diferentes, eso quiere decir que front esta el nodo viejo y en front->next el siguiente nodo. Por ultimo vemos que size=51 y maxSize=50, que demuestra que la cola supero el tamaño maximo y se ejecuto dequeue()
+
+
+
+
 
 
 
@@ -89,6 +96,7 @@ Como podemos ver, ahora front y temp tienen la misma direccion, lo que demuestra
 
 
 ## Bitácora de reflexión
+
 
 
 
