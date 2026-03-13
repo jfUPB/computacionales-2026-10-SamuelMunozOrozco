@@ -64,6 +64,9 @@ Ahora para conectar los nodos, presionamos F10 sobre la linea "rear->next = newN
 Aqui al mirar a front y rear podemos evidenciar que ya tienen diferentes direcciones de memoria, lo que significan que no apuntan a lo mismo, y tambien que el newNode tiene la misma direccion que rear, lo que quiere decir que ya el nuevo nodo esta al final de la cola
 
 
+### Evidencia 3: comportamiento de eliminación y prevención de fugas (dequeue)
+
+
 
 
 
@@ -85,5 +88,6 @@ Aqui al mirar a front y rear podemos evidenciar que ya tienen diferentes direcci
 
 
 ## Bitácora de reflexión
+
 
 
