@@ -79,6 +79,13 @@ Ahora ejecutamos la linea "front = front->next;" Esto para que el front cambie p
 <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/72a42a39-8c98-4f92-8d8a-9747ffbf8e64" />
 En este pantallazo podemos ver que front y front->next tienen direcciones diferentes, eso quiere decir que front esta el nodo viejo y en front->next el siguiente nodo. Por ultimo vemos que size=51 y maxSize=50, que demuestra que la cola supero el tamaño maximo y se ejecuto dequeue()
 
+Ahora ejecutamos la linea "delete temp;" para liberar la memoria del nodo eliminado y evitar memoryleak. Luego ejecutamos la linea "size--;" para reducir el tamaño y el size vuelva a 50
+<img width="1919" height="1139" alt="image" src="https://github.com/user-attachments/assets/d4244bc1-1464-4b44-91b3-61f108c5e825" />
+En este pantallazo se puede evidenciar que despues de ejecutar la linea "size--;" el size volvio a ser 50, lo que demuestra que se elimino el nodo correctamente
+
+
+
+
 
 
 
@@ -96,6 +103,7 @@ En este pantallazo podemos ver que front y front->next tienen direcciones difere
 
 
 ## Bitácora de reflexión
+
 
 
 
