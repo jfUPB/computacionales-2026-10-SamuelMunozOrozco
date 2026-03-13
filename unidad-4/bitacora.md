@@ -84,16 +84,15 @@ Ahora ejecutamos la linea "delete temp;" para liberar la memoria del nodo elimin
 En este pantallazo se puede evidenciar que despues de ejecutar la linea "size--;" el size volvio a ser 50, lo que demuestra que se elimino el nodo correctamente
 
 
+### Evidencia 4: control del tamaño máximo de la cola (maxSize)
+<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/8b4ba0e9-c2a5-4dd4-b28e-526e628af44e" />
+Ponemos el siguiente breakoint en ofApp.h en la linea "if (size > maxSize)" porque aqui es donde se verifica si la cola supero el limite de su tamaño
+
+En el mismo pantallazo podemos evidenciar la primera evidencia. En el Autos podemos ver dos variables, size y maxSize, en donde size tiene 51 de valor y maxSize 50, lo que nos indica que la cola a pasado el limite permitido
 
 
-
-
-
-
-
-
-
-
+<img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/61685530-b98d-4395-a157-e876e2538205" />
+Luego oprimirmos F10 para estar sobre la linea "dequeue();" y luego hundimos F11 para entrar a la funcion dequeue();. Lo que nos evidencia que cuando se supera el limite permitido de la cola se llama automaticamente a la funcion encargada de eliminar los nodos, que es dequeue()
 
 
 
@@ -103,10 +102,3 @@ En este pantallazo se puede evidenciar que despues de ejecutar la linea "size--;
 
 
 ## Bitácora de reflexión
-
-
-
-
-
-
-
