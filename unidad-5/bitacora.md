@@ -10,7 +10,10 @@
   - Cuando una cla hereda caracteristicas o atributos de otra. Tambien se dice que una clase padre le herede datos a otras clases hijas
 
 * ¿Qué es polimorfismo?
-  - Es cuandoun mismo método que se pueda comportar de diferentes formas, según el objeto
+  - Es cuandoun mismo método se pueda comportar de diferentes formas, según el objeto
+ 
+#### Encapsulamiento en el codigo
+
 
 
 
