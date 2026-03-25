@@ -188,6 +188,7 @@ age += dt;
 ```
 * Aumenta el tiempo de vida
 
+* 
 ```cpp
 angle += dt * 5;
 ```
@@ -195,27 +196,32 @@ angle += dt * 5;
 * En cada frame aumenta el angulo
 * **Preguntele mas a chat**
 
+* 
 ```cpp
 position.x += cos(angle) * 100 * dt;
 ```
 * Mueve en x usando coseno
 * Crea un movimiento lateral, que seria en espiral
 
+* 
 ```cpp
 position.y += velocity.y * dt;
 ```
 * Movimeinto en vertical, solo sube
 
+* 
 ```cpp
 velocity.y += 9.8f * dt * 6;
 ```
 * Gravedad de la particula
 
+* 
 ```cpp
 float explosionThreshold = ofGetHeight() * 0.15f;
 ```
 * Altura donde explota
 
+* 
 ```cpp
 	if (position.y <= explosionThreshold || age >= lifetime) {
 			exploded = true;
