@@ -93,12 +93,140 @@ foreach (Figura fig in misFiguras)
 * El programa lo que hace es ejecutar lo que este dentro del ciclo, como dentro del ciclo hay tres figuras, ejecuta esas tres figuras en el orden que esten escritas en el codigo
 
 
-
-
-
-
-
 ## Bitácora de aplicación 
+
+### Que teniamos que hacer
+* Crear dos nuevas funciones de particle, yo cree una que se mueve en espiral o que oscila antes de explotar, la segunda era que cambiaba de color hasta que explota
+* Lo segundo, era crear un nuevo tipo de explosion, yo cree una explosion en cruz, que las particulas solo van en horizontal y vertical
+
+### Explicacion codigo 
+
+#### SpiralParticle
+```cpp
+class SpiralParticle : public Particle {
+protected:
+	glm::vec2 position;
+	glm::vec2 velocity;
+	ofColor color;
+	float lifetime;
+	float age;
+	bool exploded;
+	float angle;
+
+public:
+	SpiralParticle(const glm::vec2& pos, const glm::vec2& vel,
+		const ofColor& col, float life)
+		: position(pos), velocity(vel), color(col),
+		lifetime(life), age(0), exploded(false), angle(0) {}
+
+	void update(float dt) override {
+		age += dt;
+		angle += dt * 5;
+
+		position.x += cos(angle) * 100 * dt;
+		position.y += velocity.y * dt;
+
+		velocity.y += 9.8f * dt * 6;
+
+		float explosionThreshold = ofGetHeight() * 0.15f;
+
+		if (position.y <= explosionThreshold || age >= lifetime) {
+			exploded = true;
+		}
+	}
+
+	void draw() override {
+		ofSetColor(color);
+		ofDrawCircle(position, 8);
+	}
+
+	bool isDead() const override { return exploded; }
+	bool shouldExplode() const override { return exploded; }
+	glm::vec2 getPosition() const override { return position; }
+	ofColor getColor() const override { return color; }
+};
+```
+
+##### 1. Heredamos de Particle
+```cpp
+class SpiralParticle : public Particle
+```
+*
+
+##### 2. Atributos
+```cpp
+glm::vec2 position;
+glm::vec2 velocity;
+ofColor color;
+float lifetime;
+float age;
+bool exploded;
+float angle;
+```
+* **position:** Donde esta la particula
+*  **velocity:** La velocidad de la particula
+*  **Color:** Color de la particula
+*  **lifetime:** Cuanto dura antes de explotar la particula
+*  **age:** cuanto duro antes de explotar
+*  **exploded:** Confirma si ya exploto
+*  **angle:** Este controla la espiral (**Preguntele mas a chat sobre esta**)
+
+
+##### 3. Constructor
+```cpp
+SpiralParticle(const glm::vec2& pos, const glm::vec2& vel,
+		const ofColor& col, float life)
+		: position(pos), velocity(vel), color(col),
+		lifetime(life), age(0), exploded(false), angle(0) {}
+```
+* Inicializa todo en la clase
+
+
+##### 4. update()
+```cpp
+age += dt;
+```
+* Aumenta el tiempo de vida
+
+```cpp
+angle += dt * 5;
+```
+* Hace que la particula gire
+* En cada frame aumenta el angulo
+* **Preguntele mas a chat**
+
+```cpp
+position.x += cos(angle) * 100 * dt;
+```
+* Mueve en x usando coseno
+* Crea un movimiento lateral, que seria en espiral
+
+```cpp
+position.y += velocity.y * dt;
+```
+* Movimeinto en vertical, solo sube
+
+```cpp
+velocity.y += 9.8f * dt * 6;
+```
+* Gravedad de la particula
+
+```cpp
+float explosionThreshold = ofGetHeight() * 0.15f;
+```
+* Altura donde explota
+
+```cpp
+	if (position.y <= explosionThreshold || age >= lifetime) {
+			exploded = true;
+```
+* Condicion de la explocion
+  - Si llego a la altura o se acabo su tiempo, explota
+
+##### 5. draw()
+
+
+
 
 
 ## Bitácora de reflexión
