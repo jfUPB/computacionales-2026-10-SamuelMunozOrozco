@@ -187,8 +187,7 @@ SpiralParticle(const glm::vec2& pos, const glm::vec2& vel,
 age += dt;
 ```
 * Aumenta el tiempo de vida
-
-* 
+<br>
 ```cpp
 angle += dt * 5;
 ```
@@ -230,7 +229,8 @@ float explosionThreshold = ofGetHeight() * 0.15f;
   - Si llego a la altura o se acabo su tiempo, explota
 
 ##### 5. draw()
-
+```cpp
+```
 
 
 
