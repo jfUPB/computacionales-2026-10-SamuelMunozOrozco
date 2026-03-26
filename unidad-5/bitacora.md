@@ -308,8 +308,12 @@ getColor()
 #### Evidencia 4. Encapsulamiento en el contexto de herencia
 <img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/71b25f3e-3bb4-4629-a950-5fc5b3b66586" />
 * Volvemos a poner el breakpoint en esa linea ya que al hundir F5 y hundir la tecla "w" que es la que saca las SpiralParticle, salen los atributos de la clase en Autos
-* En el Autos podemos ver los atributos de la clase derivada SpiralParticle, los cuales estan protegidos por la clase, usando "protected"
-* Lo que demuestra que las subclases pueden acceder a atributos protected, mientras private no
+* En la ventana Autos podemos ver los atributos de la clase derivada SpiralParticle, los cuales estan dfinidos como "protected", lo que nos deja usarlos dentro de la clase derivada, pero no por otras fuera de la jerarquia
+* Esto demuestra el encapsulamiento en el codigo, dejandonos solo acceder a los atributos de la clase en la qu estamos, y no en las demas 
+
+<br><br>
+
+#### Evidencia 5. Ciclo de vida completo de tu partícula
 
 
 
