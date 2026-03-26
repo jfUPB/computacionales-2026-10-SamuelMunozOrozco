@@ -287,7 +287,7 @@ getColor()
   - getColor()
 
 * Estas funciones pertenecen a la implementacion especifica de la clase del objeto, que en este caso es SpiralParticle
-
+<br><br>
 ##### Comparacion con RisingPaticle
 <img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/99e96ea5-99ee-4291-862b-13c49f4358a8" />
 * Hacemos lo mismo que en el anterior, pero ahora sacamos un tipo diferente de particula, en este caso RisingParticle usando la tecla "**q**"
@@ -295,9 +295,13 @@ getColor()
 * Esto demuestra que cada tipo de objeto tiene su propia tabla de funciones virtuales
 * Asi el programa puede asociar cada objeto a sus metodos virtuales correspondientes
 
+<br><br>
 
-
-
+#### Evidencia 3. Polimorfismo en tiempo de ejecución
+<img width="1919" height="1140" alt="image" src="https://github.com/user-attachments/assets/24ee4985-bfe3-45e1-9694-1a4a2672aefb" />
+*Se coloco el breakpoint en el update del SpiralParticle porque aqui se ejecuta el comportamiento de la particula
+* Se puede observar en Autos el puntero "this" del objeto en el que estamos que es SpiralParticle
+* Tambien se observan las variables que son propias de la clase como, "angle", age, lifetime y exploded. Lo que demuestra el polimorfismo al estar ejecutando funciones propias de esa clase
 
 
 ## Bitácora de reflexión
