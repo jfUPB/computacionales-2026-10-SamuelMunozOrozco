@@ -291,6 +291,9 @@ getColor()
 ##### Comparacion con RisingPaticle
 <img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/99e96ea5-99ee-4291-862b-13c49f4358a8" />
 * Hacemos lo mismo que en el anterior, pero ahora sacamos un tipo diferente de particula, en este caso RisingParticle usando la tecla "**q**"
+* Ahora hacemos lo mismo en el Autos que en la parte anterior y podemos evidenciar que las direcciones de memoria de los metodos virtuales son difernetes a los de SpiralParticle
+* Esto demuestra que cada tipo de objeto tiene su propia tabla de funciones virtuales
+* Asi el programa puede asociar cada objeto a sus metodos virtuales correspondientes
 
 
 
