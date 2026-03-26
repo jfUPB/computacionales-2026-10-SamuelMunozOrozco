@@ -303,5 +303,11 @@ getColor()
 * Se puede observar en Autos el puntero "this" del objeto en el que estamos que es SpiralParticle
 * Tambien se observan las variables que son propias de la clase como, "angle", age, lifetime y exploded. Lo que demuestra el polimorfismo al estar ejecutando funciones propias de esa clase
 
+<br><br>
+
+#### Evidencia 4. Encapsulamiento en el contexto de herencia
+
+
+
 
 ## Bitácora de reflexión
