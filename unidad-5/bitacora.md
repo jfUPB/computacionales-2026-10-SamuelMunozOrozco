@@ -5,7 +5,6 @@
 
 * ¿Qué es el encapsulamiento?
   - Es una forma de proteger datos dentro del programa. Ejemplo: hacer una función privada para que otro codigo externo no pueda acceder a ella sin permiso
-<br><br><br><br>
 
 * ¿Qué es la herencia?
   - Cuando una cla hereda caracteristicas o atributos de otra. Tambien se dice que una clase padre le herede datos a otras clases hijas
@@ -153,6 +152,7 @@ public:
 class SpiralParticle : public Particle
 ```
 * Hereda de la clase Particle
+
 <br><br>
 
 ##### 2. Atributos
@@ -172,7 +172,7 @@ float angle;
 *  **age:** cuanto duro antes de explotar
 *  **exploded:** Confirma si ya exploto
 *  **angle:** Este controla la espiral (**Preguntele mas a chat sobre esta**)
-
+<br><br>
 
 ##### 3. Constructor
 ```cpp
@@ -182,13 +182,15 @@ SpiralParticle(const glm::vec2& pos, const glm::vec2& vel,
 		lifetime(life), age(0), exploded(false), angle(0) {}
 ```
 * Inicializa todo en la clase
-
+<br><br>
 
 ##### 4. update()
 ```cpp
 age += dt;
 ```
 * Aumenta el tiempo de vida
+
+<br><br>
 
 ```cpp
 angle += dt * 5;
@@ -197,42 +199,100 @@ angle += dt * 5;
 * En cada frame aumenta el angulo
 * **Preguntele mas a chat**
 
-* 
+<br><br>
+
 ```cpp
 position.x += cos(angle) * 100 * dt;
 ```
 * Mueve en x usando coseno
 * Crea un movimiento lateral, que seria en espiral
 
-* 
+<br><br>
+
 ```cpp
 position.y += velocity.y * dt;
 ```
 * Movimeinto en vertical, solo sube
 
-* 
+<br><br>
+
 ```cpp
 velocity.y += 9.8f * dt * 6;
 ```
 * Gravedad de la particula
 
-* 
+<br><br>
+
 ```cpp
 float explosionThreshold = ofGetHeight() * 0.15f;
 ```
 * Altura donde explota
 
-* 
+<br><br>
+
 ```cpp
 	if (position.y <= explosionThreshold || age >= lifetime) {
 			exploded = true;
 ```
 * Condicion de la explocion
   - Si llego a la altura o se acabo su tiempo, explota
+ 
+<br><br>
 
 ##### 5. draw()
 ```cpp
+ofDrawCircle(position, 8);
 ```
+* Dibuja la particula
+
+<br><br>
+
+##### 6. Meotodos finales
+```cpp
+isDead()
+shouldExplode()
+getPosition()
+getColor()
+```
+
+
+
+### Fase 2
+
+#### Evidencia 1. Herencia en memoria
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/c193e39a-a19d-475c-b54c-aa0b3546950b" />
+* El breakpoint lo ponemos en la linea "particles[i]->update(dt);", porque en ese punto el programa ya creo las particulas, que estan almacenadas en el vector particles
+* En la imgen se puede ver lo siguiente: 
+  - particles[i]: Que es un puntero de tipo Particle (**Mejor explicacion a chat**)
+  - SpiralParticle: Que contiene los atributos de la la clase SpiralParticle
+  - Particle: Aparece como parte del objeto, lo que demuestra que contiene la clase base
+  - _vfptr: Que es la tabla de funciones virtuales (**Mejor explicacion**)
+
+* Cada atributo en el Autos, pertenece a la clase derivada SpiralParticle, mientras la clase base esta ahi como parte de la jerarquia heredada
+* En Autos se demuestra que la memoria tiene la clase base particle y los atributos de la clase derivada SpiralParticle. Esto demuestra que la herencia se esta aplicando, organizando los datos en la memoria, como una combinacion de la clase base y la clase derivada, todo dentro de un mismo objeto
+
+
+<br><br>
+
+#### Evidencia 2. La _vtable de tu nuevo tipo
+<img width="1919" height="1146" alt="image" src="https://github.com/user-attachments/assets/b52b49ea-2de7-46d2-8cd0-e09c3e2070c1" />
+* Volvemos a poner el breakpoint aqui ya que necesitamos una particula creada, y nos permite revisar las funciones virtuales
+* Ahora vamos a "particles[i]" y expandimos "_vfptr"
+* En el campo "_vfptr" es un puntero de la tabla de funciones virtuales "vtable". Al expandirlo podemos ver uan lista de direcciones que corresponden a los metodos virtuales del objeto
+  - update()
+  - draw()
+  - isDead()
+  - shouldExplode()
+  - getPosition()
+  - getColor()
+
+* Estas funciones pertenecen a la implementacion especifica de la clase del objeto, que en este caso es SpiralParticle
+
+##### Comparacion con RisingPaticle
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/99e96ea5-99ee-4291-862b-13c49f4358a8" />
+* Hacemos lo mismo que en el anterior, pero ahora sacamos un tipo diferente de particula, en este caso RisingParticle usando la tecla "**q**"
+
+
 
 
 
