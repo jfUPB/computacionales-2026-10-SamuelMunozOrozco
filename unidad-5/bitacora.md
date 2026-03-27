@@ -379,6 +379,38 @@ ofDrawCircle(position, size);
 ```
 * Igual que las otras explosiones, solo cambia el movimiento
 
+<br><br><br><br>
+
+#### Cambios en void ofApp::createRisingParticle(int type)
+
+##### 1. El patrametro "type"
+```cpp
+void ofApp::createRisingParticle(int type)
+```
+* Antes no lo tenia, ya que solo teniamos un tipo de particula, ahora como tenemos 3, necesitamos que el sistema entienda, para saber cual sacar, ya que tambien a cada particula le asignamos una tecla determinada
+
+##### 2. Random
+```cpp
+if (type == -1) {
+    type = (int)ofRandom(3);
+}
+```
+* SI no se le especifica cual hacer, lo saca random, o sea, cuando usa el mouse o la tecla espacio
+
+##### 3. Nuevas particulas
+* Antes teniamos este, que solo sacaba un tipo de particula:
+```cpp
+particles.push_back(new RisingParticle(...));
+```
+* Ahora tenemos este, que se encarga de sacar los tres:
+```cpp
+if (type == 0) → Rising
+else if (type == 1) → Spiral
+else → ColorChanging
+```
+
+####
+
 
 
 
