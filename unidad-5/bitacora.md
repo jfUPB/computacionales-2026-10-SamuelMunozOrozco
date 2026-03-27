@@ -255,6 +255,132 @@ getPosition()
 getColor()
 ```
 
+#### ColoChangingParticle
+
+##### 1. Atributos
+```cpp
+glm::vec2 position;
+glm::vec2 velocity;
+ofColor color;
+float lifetime;
+float age;
+bool exploded;
+```
+* Son practicamente los mismos, la unica diferencia es que no tienen angle, porque tiene un funcionamiento diferente
+
+##### 2. update()
+
+```cpp
+position += velocity * dt;
+```
+* Movimiento en X y Y
+
+<br><br>
+
+```cpp
+age += dt;
+```
+* Tiempo de vida de la particula
+
+<br><br>
+
+```cpp
+velocity.y += 9.8f * dt * 6;
+```
+* Gravedad con la que cae
+
+<br><br>
+
+```cpp
+color.setHsb(ofRandom(255), 220, 255);
+```
+* Este es su comportamiento unico, que cambia de color constantemente hasta que explota
+
+<br><br>
+
+```cpp
+if (position.y <= explosionThreshold || age >= lifetime)
+```
+* La explosion, que es igual a las otras
+
+<br><br>
+
+```cpp
+ofDrawCircle(position, 8);
+```
+* Igual que en Spiral, solo cambia el color de las particulas
+
+
+
+#### CrossExplosion
+
+##### 1. Constructor
+```cpp
+CrossExplosion(const glm::vec2 & pos, const ofColor & col)
+    : ExplosionParticle(pos, glm::vec2(0, 0), col, 1.2f, ofRandom(16, 32))
+```
+* Llama al constructor de la clase padre
+
+<br><br>
+
+##### 2. Direccion
+```cpp
+int direction = (int)ofRandom(4);
+```
+* Genera solo 4 direcciones posibles
+
+<br><br>
+
+##### 3. Velocidad
+```cpp
+float speed = ofRandom(100, 200);
+```
+* Velocidad de la particula
+
+<br><br>
+
+##### 4. Logica de la cruz
+
+```cpp
+if (direction == 0)
+    velocity = glm::vec2(speed, 0); // derecha
+```
+* Mueve solo en X
+
+<br><br>
+
+```cpp
+else if (direction == 1)
+    velocity = glm::vec2(-speed, 0); // izquierda
+```
+* Lado contrario
+
+<br><br>
+
+```cpp
+else if (direction == 2)
+    velocity = glm::vec2(0, speed); // abajo
+```
+* Mueve solo en el eje Y
+
+<br><br>
+
+```cpp
+else
+    velocity = glm::vec2(0, -speed); // arriba
+```
+* Hacia arriba
+
+<br><br>
+
+##### 5. draw()
+```cpp
+ofDrawCircle(position, size);
+```
+* Igual que las otras explosiones, solo cambia el movimiento
+
+
+
 
 
 ### Fase 2
@@ -266,7 +392,7 @@ getColor()
   - particles[i]: Que es un puntero de tipo Particle (**Mejor explicacion a chat**)
   - SpiralParticle: Que contiene los atributos de la la clase SpiralParticle
   - Particle: Aparece como parte del objeto, lo que demuestra que contiene la clase base
-  - _vfptr: Que es la tabla de funciones virtuales (**Mejor explicacion**)
+  - _vfptr: Que es la tabla de funciones virtuales, funciones que se pueden sobrescribir usando override, en clases derivadas
 
 * Cada atributo en el Autos, pertenece a la clase derivada SpiralParticle, mientras la clase base esta ahi como parte de la jerarquia heredada
 * En Autos se demuestra que la memoria tiene la clase base particle y los atributos de la clase derivada SpiralParticle. Esto demuestra que la herencia se esta aplicando, organizando los datos en la memoria, como una combinacion de la clase base y la clase derivada, todo dentro de un mismo objeto
