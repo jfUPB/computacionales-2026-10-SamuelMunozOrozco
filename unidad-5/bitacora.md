@@ -343,8 +343,14 @@ Ahora para demostrar que se elimina correctamente
 <img width="1897" height="1130" alt="image" src="https://github.com/user-attachments/assets/4c9c3ac6-56d8-4f7d-b17a-975b8fa33bef" />
 * Podemos ver como el size baja a 19, lo que demuestra que se elimina correctamente y se libera la memoria
 
+<br><br>
 
-
+#### Evidencia 7. Prueba de condición límite
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/8584c6eb-a84b-4e5b-83a4-bfe3e999f8ac" />
+* Colocamos el breakpoint aca, ya que es la parte del programa donde el programa recorre y actualiza todas las particulas del sistema en cada frame
+* Aqui decidi usar el escenario donde se crean muchas particulas al mismo tiempo usando la tecla espacio" que crea muchas, valga la redundancia, al mismo tiempo
+* En el Autos podemos evidenciar que se crean las particulas correctamente, porque podemos ver  al lado de Particle un size de 1000
+* Esto demuestra que el sistema es capaz de manejar muchas particulas al mismo tiempo sin fallo alguno
 
 
 
