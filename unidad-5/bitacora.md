@@ -336,6 +336,12 @@ Ahora para demostrar que se elimina correctamente
 <br><br>
 
 #### Evidencia 6. Sin fugas de memoria
+<img width="1919" height="1143" alt="image" src="https://github.com/user-attachments/assets/a55e9542-8a80-40d4-a54f-7d29580f8893" />
+* Usamos el mismo breakpoint en esta parte, ya que queremos ver que seelimina correctamente
+* Como podemos ver, al lado de particle, despues de crear una, el size es 20
+* Pero si ejecutamos la linea usando F10:
+<img width="1897" height="1130" alt="image" src="https://github.com/user-attachments/assets/4c9c3ac6-56d8-4f7d-b17a-975b8fa33bef" />
+* Podemos ver como el size baja a 19, lo que demuestra que se elimina correctamente y se libera la memoria
 
 
 
