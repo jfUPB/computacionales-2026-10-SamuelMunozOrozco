@@ -314,6 +314,33 @@ getColor()
 <br><br>
 
 #### Evidencia 5. Ciclo de vida completo de tu partícula
+<img width="1916" height="1141" alt="image" src="https://github.com/user-attachments/assets/e6ec8378-48a2-4fc9-b7ac-647b5b662b0a" />
+* Ponemos un breakpoint en esta linea y ejecutamos el programa, luego hundimos "w" que activa la particula SpiralParticle y se detiene ahi mismo. Lueho hundimos F10 hasta salirnos del if y podemos ver en la ventana Autos que la particula se creo correctamente por el size = 1 que se ve al lado del atributo particle
+
+<br><br>
+
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/774c9771-9136-485f-ae36-b8b9cc062836" />
+* En esta imagen podemos ver su estado durante update
+* Despues de ejecutar hasta el breakpoint y crear la SpiralParticle usando "w" se puede ver al extender el "this" en Autos que la particula ya tiene todos sus atributos correspondientes.
+* Y al hundir F10 para avanzar en el programa, se puede ver como los valores de estos atributos cambian, demostrando como cambian segun avanza el tiempo
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/6303f4e7-e656-4ce5-823d-4eb3ecbb3dce" />
+
+<br>
+
+Ahora para demostrar que se elimina correctamente
+<img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/999fa576-3b6d-47e2-918f-b735ad0bac4c" />
+* Ponemos el breakpoint en la siguiente liena, ya que en esa es cuando se elimina la particula despues de la exposion
+* Como se puede ver, en la ventana Autos tenemos un "particles[i]" que es el puntero de la particula, y si seguimos avanzando en el codigo con F10, para ejecutar la linea, podremos ver como este "particles[i]" se elimina, liberando la memoria
+<img width="1918" height="1143" alt="image" src="https://github.com/user-attachments/assets/80d6f58e-e3f2-4d78-b1db-b60e3f2b861b" />
+
+<br><br>
+
+#### Evidencia 6. Sin fugas de memoria
+
+
+
+
+
 
 
 
