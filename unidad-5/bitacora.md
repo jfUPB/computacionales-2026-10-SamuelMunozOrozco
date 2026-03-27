@@ -325,7 +325,7 @@ getColor()
 * Y al hundir F10 para avanzar en el programa, se puede ver como los valores de estos atributos cambian, demostrando como cambian segun avanza el tiempo
 <img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/6303f4e7-e656-4ce5-823d-4eb3ecbb3dce" />
 
-<br>
+<br><br>
 
 Ahora para demostrar que se elimina correctamente
 <img width="1919" height="1142" alt="image" src="https://github.com/user-attachments/assets/999fa576-3b6d-47e2-918f-b735ad0bac4c" />
