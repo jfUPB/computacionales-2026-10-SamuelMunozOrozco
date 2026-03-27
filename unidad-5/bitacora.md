@@ -409,7 +409,38 @@ else if (type == 1) → Spiral
 else → ColorChanging
 ```
 
-####
+<br><br><br><br>
+
+#### Cambios en void ofApp::keyPressed(int key)
+
+##### 1. Control por teclas
+Antes solo teniamos esto, que solo funcionaba para la tecla espacio:
+```cpp
+if (key == ' ') {
+    for (int i = 0; i < 1000; i++) {
+        createRisingParticle();
+    }
+}
+```
+
+<br><br>
+
+Ahora tenemos:
+```cpp
+if (key == 'q') → Rising
+if (key == 'w') → Spiral
+if (key == 'e') → ColorChanging
+```
+* Que afigna a cada particula una tecla en especifico 
+
+##### 2. Uso del parametro "type"
+```cpp
+createRisingParticle(0); // Rising
+createRisingParticle(1); // Spiral
+createRisingParticle(2); // ColorChanging
+```
+* Asi cada tecla sabe cual particula crear
+
 
 
 
