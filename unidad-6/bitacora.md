@@ -26,21 +26,16 @@ Y extendemos la parte observers que se ven en la ventana Autos
 <br><br>
 **¿Cuántos elementos tiene?**
 * Hay 115 elementos
-
 <br><br>
-
 **¿Qué tipo de objetos son**
 * Son de tipo 0x...
-
 <br><br>
-
 **¿A qué direcciones de memoria apuntan?**
 <img width="344" height="355" alt="image" src="https://github.com/user-attachments/assets/a0d10f9e-fe58-45de-8cf0-075e2358584a" />
 <br><br>
 * En la imagen podemos ver el **tipo de cada elemento dentro del vector** "observers"
 * Lo que significa que estos elementos son un puntero a **Observers**, pero en realidad apuntan a un objeto de tipo **Particle**
 * En resumen, apuntan a la direccion de memoria donde esta almacenado el objeto tipo **Particle**
-
 <br><br>
 <br><br>
 
