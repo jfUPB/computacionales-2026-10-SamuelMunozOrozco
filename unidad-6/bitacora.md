@@ -7,6 +7,8 @@
 #### INVESTIGACIÓN DEL PATRÓN OBSERVER
 
 Ponemos un breakpoint en la siguiente parte:
+```cpp
+```
 
 
 
