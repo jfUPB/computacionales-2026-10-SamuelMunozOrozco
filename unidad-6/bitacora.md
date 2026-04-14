@@ -72,6 +72,59 @@ void Particle::onNotify(const std::string & event) {  // 🔴 breakpoint
   - Sabe a quien notificar porque almacena punteros tipo "(Observers*)" en el vector **Observers**, lo que contiene las direcciones de memoria de los objetos **Particle**. Al recorrer el vector llama la funcion **"onNotify"** sobre cada puntero y el subject se encarga de recorrer esas direcciones y que cada objeto ejecute su funcion
   - Sabe a quien notificar porque se almacenan punteros de tipo (Observers*) en el vector "observers", lo que contiene las direcciones de memoria de cada objeto "Particle", al el "Subject" recorrer el vector "observers", tiene las direcciones de cada objeto y mediante losp unteros ejecuta la funcion **onNotify** en cada objeto, para que asi cada objeto reaccione cuando ocurra un evento
 
+<br><br>
+<br><br>
+
+#### Investigación del patrón State
+
+Ponemos el breakpoint en la siguiente parte
+```cpp
+void Particle::setState(State * newState) {
+    if (state) {                     // 🔴 BREAKPOINT AQUÍ
+        state->onExit(this);
+        delete state;
+    }
+    state = newState;
+    if (state) {
+        state->onEnter(this);
+    }
+}
+```
+* Presionamos la letra "a" que corresponde a "attract" y miramos lo que sae en Autos
+
+<br><br>
+<img width="1807" height="305" alt="image" src="https://github.com/user-attachments/assets/34a2a94f-11e4-4d98-9d03-aff428444fa3" />
+* Si nos fijamos en la parte "state" podemos ver que las particulas estan en estado normal, a pesar de haber hundido la tecla "a" que corresponde a "attract", esto significa que aun no ha entrado en ese estado
+* Luego avanzamos en el programa hundiendo F10 hasta la linea
+```cpp
+state = newState;
+```
+Pasando primero por la linea 
+```cpp
+delete state;
+```
+* Al llegar a la linea de "delete" esto hace que se elimine el estado anterior para asi poder pasar al siguiente
+* Entonces esto se ve cuando llegamos a la linea de "state = newState;" y la ejecutamos
+<img width="1918" height="950" alt="image" src="https://github.com/user-attachments/assets/0db7dd9e-90d2-45d3-a0c4-4737d718a2dd" />
+* En la imagen podemos ver que el state cambio y ahora no es Normal, sino attract
+
+<br><br>
+<br><br>
+
+Para la siguiente parte ponemos dos breakpoints en las siguientes partes
+```cpp
+void NormalState::update(Particle * particle) {   // 🔴 BREAKPOINT
+    particle->position += particle->velocity;
+}
+```
+```cpp
+void AttractState::update(Particle * particle) {   // 🔴 BREAKPOINT
+    ofVec2f mouse(ofGetMouseX(), ofGetMouseY());
+    steer(particle, mouse, 0.05f, 3.0f, 0.2f);
+}
+```
+
+<br><br>
 
 
 
