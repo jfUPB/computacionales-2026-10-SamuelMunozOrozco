@@ -143,10 +143,23 @@ state->update(this);
 * "state" lo que hace es apuntar a la funcion que se debe ejecutar. Ejemplo, si estamos en NormalState, apunta a NormalState:update y lo mismo en AttractState, si estamos ahi, se apunta a AttractState:update
 * Tambien en el depurador podemos observar que _vptr apunta a la _vtable correspondiente a un tipo real del objeto
 
+<br><br>
+<br><br>
 
+#### Investigación del patrón Factory
+
+<br><br>
+
+<img width="1918" height="1146" alt="image" src="https://github.com/user-attachments/assets/6a1f1a6d-9ecc-4ea8-beeb-77b96597572e" />
+
+<br><br>
+
+<img width="1918" height="1139" alt="image" src="https://github.com/user-attachments/assets/abd8d301-799f-4292-9187-b3e520ba96ca" />
 
 
 <br><br>
+
+<img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/c058d0a2-0b9b-485c-b888-ddc7e604d9b7" />
 
 
 
