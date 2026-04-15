@@ -125,6 +125,28 @@ void AttractState::update(Particle * particle) {   // 🔴 BREAKPOINT
 ```
 
 <br><br>
+ ¿A cuál llega el depurador primero en cada caso?
+ * En la ventana Autos podemos ver que al hundir "n" llega primero a NormalState
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/df834223-f561-4777-b7ff-b0455fe8b779" />
+
+<br><br>
+* Cuando hundimos a se puede ver como dentro de "this", State cambia a AttractState
+<img width="1913" height="1140" alt="image" src="https://github.com/user-attachments/assets/1b552c24-a47c-4272-b2ed-b654a82b8ac3" />
+
+<br><br>
+¿Cómo demuestra esto que el patrón State usa polimorfismo para cambiar el comportamiento en tiempo de ejecución?
+* Por la siguiente linea:
+```cpp
+state->update(this);
+```
+* Esta es la encargada de hacer que el estado actual cumpla su funcion y dependiendo de la tecla que presione, esta linea actualizara el comportamiento de las particulas en tiempo de ejecucion
+* "state" lo que hace es apuntar a la funcion que se debe ejecutar. Ejemplo, si estamos en NormalState, apunta a NormalState:update y lo mismo en AttractState, si estamos ahi, se apunta a AttractState:update
+* Tambien en el depurador podemos observar que _vptr apunta a la _vtable correspondiente a un tipo real del objeto
+
+
+
+
+<br><br>
 
 
 
