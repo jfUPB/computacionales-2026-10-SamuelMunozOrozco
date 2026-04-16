@@ -151,15 +151,23 @@ state->update(this);
 <br><br>
 
 <img width="1918" height="1146" alt="image" src="https://github.com/user-attachments/assets/6a1f1a6d-9ecc-4ea8-beeb-77b96597572e" />
+* Aqui podemos ver como el objeto se acaba de crear pero no ha sido inicializado, por eso no tiene una direccion de memoria, por asi decirlo, normal
 
 <br><br>
 
 <img width="1918" height="1139" alt="image" src="https://github.com/user-attachments/assets/abd8d301-799f-4292-9187-b3e520ba96ca" />
-
+* Ya tenemos la direccion de memoria y su tipo, que es "star"
+* El objeto ya tiene datos validos y fue configurado segun su tipo
 
 <br><br>
 
 <img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/c058d0a2-0b9b-485c-b888-ddc7e604d9b7" />
+* Aqui tenemos la direccion de p que es igual a la que tenemos en factory
+*
+¿Qué relación tienen las direcciones de los objetos creados con los elementos del vector?
+* R/= La direccion creada en "ParticleFactory::createParticle" es la misma que se almacena en el vector "particles en ofApp::setup"
+* Esto demuestra que no se crean copias del objeto, sino que se trabaja con puntero a la misma instancia en memoria
+
 
 
 
