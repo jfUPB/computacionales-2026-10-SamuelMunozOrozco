@@ -207,7 +207,7 @@ state->update(this);
 
 * En estas dos capturas podemos ver como cambia al nuevo tipo de estado
 * En la primera, despues de ejecutar la linea de setstate podemos ver como el state sigue en normal, pero que el newstate ya esta en center, lo que nos quiere decir que ya esta preparado para cambiarse
-* En el segundo pantallazo 
+* En el segundo pantallazo despues de ejecutar la linea state=newSate, podemos ver como el state ahora cambia a center, lo que evidencia que el estado cambia correctamente, eliminando el estado anterior con delate
 
 
 
