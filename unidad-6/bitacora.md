@@ -196,7 +196,8 @@ state->update(this);
 
 <br><br>
 ### Evidencia 3 — La cadena Observer → State completa
-
+<img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/64137237-c6fa-428a-99f8-7535974c22c9" />
+* En este primer pantallazo, podemos evidenciar como el nuevo evento llega a onNotify
 
 
 
