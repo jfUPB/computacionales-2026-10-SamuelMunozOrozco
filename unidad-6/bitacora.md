@@ -197,8 +197,17 @@ state->update(this);
 <br><br>
 ### Evidencia 3 — La cadena Observer → State completa
 <img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/64137237-c6fa-428a-99f8-7535974c22c9" />
-* En este primer pantallazo, podemos evidenciar como el nuevo evento llega a onNotify
+* En este primer pantallazo, podemos evidenciar como el nuevo evento llega a onNotify. Si nos fijamos en al ventana Autos, en la parte de event, despues de ejecutar la linea de onNotify se que explicitamente "center" lo que evidencia que el evento llefgo correctamente desde el observer
 
+<br><br>
+<img width="1919" height="1137" alt="image" src="https://github.com/user-attachments/assets/c0b9f9c3-63c1-4380-9c4e-ece17faecd83" />
+
+
+<img width="1914" height="1136" alt="image" src="https://github.com/user-attachments/assets/7374b1e0-0518-4dca-81be-b61fba31f461" />
+
+* En estas dos capturas podemos ver como cambia al nuevo tipo de estado
+* En la primera, despues de ejecutar la linea de setstate podemos ver como el state sigue en normal, pero que el newstate ya esta en center, lo que nos quiere decir que ya esta preparado para cambiarse
+* En el segundo pantallazo 
 
 
 
