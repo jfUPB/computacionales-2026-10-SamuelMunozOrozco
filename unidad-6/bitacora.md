@@ -178,6 +178,20 @@ state->update(this);
 * Como podemos ver en la imagen, en el Autos, podemos ver que la variable type tiene de valor "comet", lo que significa que se creo correctaente la particula
 * Tambien en la parte de arriba al extender particles, podemos ver todos los valores de la nueva particula 
 
+<br><br>
+### Evidencia 2 — Tu nuevo estado en la _vtable
+<img width="1919" height="1138" alt="image" src="https://github.com/user-attachments/assets/0f9c5e36-90b3-48cf-bcf2-11cdbf599289" />
+
+
+
+<br><br>
+
+<img width="1916" height="1139" alt="image" src="https://github.com/user-attachments/assets/d0df56fa-90d5-4dac-93dc-902052a65b34" />
+
+
+<br><br>
+* En cada pantallazo podemos ver en la ventana Autos 
+
 
 
 
