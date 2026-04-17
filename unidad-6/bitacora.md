@@ -212,11 +212,21 @@ state->update(this);
 <br><br>
 ### Evidencia 4 — Decisión de diseño justificada****
 
-
-
 <img width="1919" height="854" alt="image" src="https://github.com/user-attachments/assets/bc6ab29b-d05c-4f4e-a937-4493be128b44" />
+* En el primer pantallazo podemos ver como el puntero state apunta al nuevo estado de la particula, eliminando el anterior usando delete. Esto demuestra que el cambio de estado ocurrio correctamente en la memoria
+* Lo que demuestra que el sistema cambia de estado en tiempo de ejecucion
 
+<br><br>
 <img width="1919" height="941" alt="image" src="https://github.com/user-attachments/assets/9f035581-9702-45e3-a826-0265c4479a74" />
+* En el depurador, podemos ver en this
+* Esto demuestra que el cambio de estado no afecta el puntero en memoria, sino tambien el comportamiento del programa, ya que se update(), ahora ejecuta una implementacion diferente
+
+<br><br>
+Entonces. Por qué tu nuevo estado hereda directamente de State y no de un estado existente?
+
+* Hereda de state y no de los otros estados porque su comportamiento es totalmente diferente. Porque mientras que attract y repel state, dependen de la posicion del mouse, center tiene su propio comportamiento que hace ue las particulas se dirijan al centro del canvas
+* Que herede de state y no de otro estado permite que state tenga una implementacion unica
+* Esta desicion permite que se pueda extender el sistema de manera mas facil, ya que si queremos crear nuevos estados, no podemos hacer que dependan de comportamientos de otros, tiene que poder ser unicos en su implementacion
 
 
 
