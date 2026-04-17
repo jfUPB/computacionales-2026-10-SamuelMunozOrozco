@@ -190,7 +190,9 @@ state->update(this);
 
 
 <br><br>
-* En cada pantallazo podemos ver en la ventana Autos 
+* En cada pantallazo podemos ver en la ventana Autos, al expandir this, que la variable "_vptr" tienen direcciones de memoria diferentes, lo que indica que cada uno apunta a una tabla virtual diferente
+* La entrada que cambia en la "_vtable" es la del metodo "update()" ya que cada estado cambia como se implementa este metodo
+* Una entrada es una posicion en la tabla virtual que guarda la direccion de una funcion
 
 
 
