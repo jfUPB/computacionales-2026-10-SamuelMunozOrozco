@@ -194,7 +194,8 @@ state->update(this);
 * La entrada que cambia en la "_vtable" es la del metodo "update()" ya que cada estado cambia como se implementa este metodo
 * Una entrada es una posicion en la tabla virtual que guarda la direccion de una funcion
 
-
+<br><br>
+### Evidencia 3 — La cadena Observer → State completa
 
 
 
