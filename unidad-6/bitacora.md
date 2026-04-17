@@ -168,19 +168,30 @@ state->update(this);
 * R/= La direccion creada en "ParticleFactory::createParticle" es la misma que se almacena en el vector "particles en ofApp::setup"
 * Esto demuestra que no se crean copias del objeto, sino que se trabaja con puntero a la misma instancia en memoria
 
-
-
-
-
-
-
-
-
 <br><br>
 
-
-
 ## Bitácora de aplicación 
+
+### Evidencia 1 — Tu nueva partícula en la Factory
+<img width="1919" height="954" alt="image" src="https://github.com/user-attachments/assets/08387b4f-a52f-4ee8-a719-7a07b25028fd" />
+
+* Como podemos ver en la imagen, en el Autos, podemos ver que la variable type tiene de valor "comet", lo que significa que se creo correctaente la particula
+* Tambien en la parte de arriba al extender particles, podemos ver todos los valores de la nueva particula 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Bitácora de reflexión
