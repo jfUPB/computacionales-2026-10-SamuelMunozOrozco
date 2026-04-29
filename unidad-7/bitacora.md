@@ -77,10 +77,17 @@ glUniform2f(offsetLoc, x, y);
 * Lo que significa que el triangulo se esta moviendo, porque X y Y cambia, por los valores de X y Y que se ven en la ventana autos
 * El movimiento de X y Y no viene del arreglo de vertices, solo se hace un desplazamiento, pero los vertices siguen siendo los mismo, porque si cambiara, la figura del triangulo cambiaria
 
+<img width="960" height="1103" alt="image" src="https://github.com/user-attachments/assets/1e859378-5807-4bee-b839-610704acb32e" />
+
+* Un ejemplo de como cambian si sigo avanzando en el programa
+
+
 <br><br>
 
 <img width="959" height="1137" alt="image" src="https://github.com/user-attachments/assets/1b990059-c386-4a1c-9997-b529306b39db" />
-* El uniform ourColor modifica el color del fragment shader dinámicamente usando valores calculados con funciones seno y coseno. (Lo mismo, dime como justifica esto como evidencia si no muestra nada de el arreglo)
+
+* El uniform ourColor modifica el color del fragment shader dinámicamente usando valores calculados con funciones seno y coseno
+* En la ventana autos se pueden ver los valores r y g como cmabian constantemente, eso demuestra el cambio visual mediante uniforms y no modificando el arreglo de ninguna manera
 
 <br><br>
 
