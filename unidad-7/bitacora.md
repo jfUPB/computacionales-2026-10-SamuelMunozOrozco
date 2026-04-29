@@ -56,7 +56,8 @@ GLAD debe salir despues de GLFW, porque es el encargado de cargar las direccione
 
 #### Evidencia 3
 
-<img width="955" height="1144" alt="image" src="https://github.com/user-attachments/assets/e572aeb8-d847-411b-8865-26cd00740aa1" />
+<img width="951" height="1143" alt="image" src="https://github.com/user-attachments/assets/1c7e9be8-bd2f-445e-a6e6-dbd6c43e2546" />
+
 * El arreglo vertices mantiene valores constantes durante toda la ejecución del programa.
 
 <br><br>
