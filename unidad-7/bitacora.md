@@ -113,14 +113,12 @@ glUniform2f(offsetLoc, x, y);
 
 <img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/cbc84e04-56cd-4d7e-be33-36c7a8dfac47" />
 
+* Esta "layout(location = 1)" lo que nos esta diciendo es que quiere recibir los vertices por el canal 1, per el VBO "glVertexAttribPointer(0, ...)" dice que envia los datos por el canal 0. Lo que pasa es que el shader y el VBO ya no se comunian por el mismo canal
+* El shader nunca recibe las coordenadas de x,y y z, por lo que no puede construir el triagulo
+
 * Esperaba que el triángulo dejara de renderizarse correctamente porque el atributo del vertex shader ya no coincide con el location configurado en glVertexAttribPointer.
 
-* Al ejecutar el programa, el triángulo desapareció porque el shader esperaba recibir datos en el location 1, mientras que el VBO seguía enviándolos al location 0.
-
-* Concluyo que los locations deben coincidir entre el shader y la configuración del VAO/VBO. 
-
-* La conexión entre CPU y GPU depende de esa correspondencia. Si los locations no coinciden, el vertex shader no recibe correctamente los datos de los vértices.
-
+* Por ende es obvio decir que los canales o locations deben coincidir entre el shader y la configuración del VAO/VBO. 
 
 
 #### Evidencia 5
