@@ -2,7 +2,106 @@
 
 ## Bitácora de proceso de aprendizaje
 
-### Notas
+### Notas y conceptos
+
+#### APOS (Asynchronous Pixel Operations)
+APOS hace referencia a operaciones de píxeles que la GPU puede realizar de manera asíncrona, es decir, sin detener completamente a la CPU.
+La idea es que mientras la GPU procesa gráficos, la CPU puede seguir ejecutando otras instrucciones.
+
+**Función principal**
+
+Permitir que CPU y GPU trabajen en paralelo para mejorar rendimiento.
+
+#### VBO (Vertex Buffer Object)
+El VBO es un espacio de memoria en la GPU donde se almacenan los vértices de las figuras.
+
+Ejemplo:
+```
+float vertices[] = {
+   -0.5f, -0.5f, 0.0f,
+    0.5f, -0.5f, 0.0f,
+    0.0f,  0.5f, 0.0f
+};
+```
+
+Ese arreglo primero existe en la RAM (CPU), y luego:
+```
+glBufferData(...)
+```
+lo copia al VBO en la GPU.
+
+* Entonces que hace en resumen?
+  - Guardar datos geométricos para que la GPU los use rápidamente.
+
+* Que almacena?
+  - Posiciones
+  - Colores
+  - Normales
+  - Coordenadas de textura
+  - etc.
+
+
+#### VAO (Vertex Array Object)
+El VAO no guarda los vértices directamente.
+
+Lo que guarda es la configuración de cómo interpretar los datos del VBO.
+
+Por ejemplo:
+```
+glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
+```
+* Le dice a OpenGL "Cada vértice tiene 3 floats (x,y,z)". Esta configuracion queda almacenada dentro del VAO
+
+* Que hace?
+  - Recordar cómo están organizados los datos de los vértices.
+
+* Por que sirve?
+  - Evita configurar todo nuevamente cada vez que se dibuja.
+
+
+ #### Vertex Shader
+ El Vertex Shader es un pequeño programa que se ejecuta en la GPU y procesa cada vértice individualmente.
+
+Se ejecuta una vez por cada vértice.
+
+* Que hace?
+  - Toma la posicion del vertice y puede moverlo, rotarlo, escalarlo, cambiar de coordenadas, enviar datos al siguiente pipeline
+
+Ejemplo:
+```
+#version 330 core
+
+layout(location = 0) in vec3 aPos;
+
+void main()
+{
+    gl_Position = vec4(aPos, 1.0);
+}
+```
+
+* Recibe un vertice desde el VBO
+```
+in vec3 aPos;
+```
+
+* Es la posicion final del vertice
+```
+gl_Position
+```
+
+* Funcion principal
+  - Transformar los vértices antes de dibujarlos. (en que los transforma?)
+
+
+#### Uniforms
+Los uniforms son variables especiales que la CPU le envía al shader.
+
+Se llaman “uniform” porque tienen el mismo valor para todos los vértices o fragmentos durante un draw call.
+
+* Que hacen?
+  - Permiten cambiar información del shader desde el programa C++.
+  - Como colores, matrices, tiempo, iluminacion, posicion de camara, etc.
+
 
 
 ## Bitácora de aplicación 
