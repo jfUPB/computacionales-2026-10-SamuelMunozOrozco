@@ -129,13 +129,6 @@ glUniform2f(offsetLoc, x, y);
 
 * Se decidio utilizar uniforms proque el triangulo si iba a mantener igual durante todo el funcionamiento del sistema, solo se moveria al rededor del canvas y cambiaria de color dinamicamente durante ese tiempo, pero los vertices y la forma del triangulo se mantendrian iguales
 * Los atributos se usan cuando los verties neesitan datos distintos, mientras que los uniform son variables globales para hacer cambios en el shader
-* 
-
-
-
-
-
-
 
 
 
