@@ -42,13 +42,16 @@ GLAD debe salir despues de GLFW, porque es el encargado de cargar las direccione
 <br><br>
 
 <img width="954" height="962" alt="image" src="https://github.com/user-attachments/assets/008929b8-2305-4a38-ab15-0ec25db6cdda" />
-* glDrawArrays envía la orden de dibujo a la GPU utilizando los datos previamente configurados en el VAO y el VBO. (Lo mismo, que te explique bien la evidencia y lo que se muestra en el depurador y si eso ecuenta como evidencia)
 
-* El flujo de datos inicia en el arreglo vertices definido en C++. Posteriormente, glBufferData copia esa información al VBO en la GPU
+* glDrawArrays envía la orden de dibujo a la GPU utilizando los datos previamente configurados en el VAO y el VBO ( glDrawArrays, es quien da la orden final a la GPU de dibujar)
+
+* El flujo de datos inicia en el arreglo vertices, luego glBufferData copia esa información al VBO en la GPU
 
 * Luego, glVertexAttribPointer especifica cómo deben interpretarse esos datos y los conecta con el atributo aPos del vertex shader mediante el location 0
 
 * Finalmente, glDrawArrays utiliza esa configuración para ejecutar el pipeline gráfico y dibujar el triángulo
+
+* GL_TRIANGLES indica wue lo vertices son un triangulo
 
 
 #### Evidencia 3
