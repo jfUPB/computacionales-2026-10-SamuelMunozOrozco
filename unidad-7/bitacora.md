@@ -29,7 +29,9 @@ GLAD debe salir despues de GLFW, porque es el encargado de cargar las direccione
 <br><br>
 
 <img width="837" height="1084" alt="image" src="https://github.com/user-attachments/assets/568113ad-626b-4751-b6fb-95dedf1e5b17" />
-* glBufferData copia los datos del arreglo vertices hacia la memoria de la GPU usando el VBO 
+* glBufferData copia los datos del arreglo vertices hacia la memoria de la GPU usando el VBO
+* El VBO es el bloque de memoria dentro de la GPU donde se guardan los vertices
+* Esos vertices son esos numeros en rojo que se ven en el depurador
 
 <br><br>
 
