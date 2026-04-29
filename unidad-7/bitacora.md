@@ -36,19 +36,19 @@ GLAD debe salir despues de GLFW, porque es el encargado de cargar las direccione
 <br><br>
 
 <img width="952" height="1113" alt="image" src="https://github.com/user-attachments/assets/c5f38dca-0a7c-43d5-a6a8-79d4880df816" />
-* (Mandarle a chat las imagenes y preguntare si si es buena evidencia y si que explique ciertos conceptos, como las funciones del vertex shader y eso )
-* glVertexAttribPointer define cómo OpenGL debe interpretar los datos del VBO y los asocia con el atributo location 0 del vertex shader.
+* glVertexAttribPointer define cómo OpenGL debe interpretar los datos del VBO y los asocia con el atributo location 0 del vertex shader
+* En este caso, cada vertice esta formado por 3 valores float correspondientes a las coordenadas x,y,z
 
 <br><br>
 
 <img width="954" height="962" alt="image" src="https://github.com/user-attachments/assets/008929b8-2305-4a38-ab15-0ec25db6cdda" />
 * glDrawArrays envía la orden de dibujo a la GPU utilizando los datos previamente configurados en el VAO y el VBO. (Lo mismo, que te explique bien la evidencia y lo que se muestra en el depurador y si eso ecuenta como evidencia)
 
-* El flujo de datos inicia en el arreglo vertices definido en C++. Posteriormente, glBufferData copia esa información al VBO en la GPU.
+* El flujo de datos inicia en el arreglo vertices definido en C++. Posteriormente, glBufferData copia esa información al VBO en la GPU
 
-* Luego, glVertexAttribPointer especifica cómo deben interpretarse esos datos y los conecta con el atributo aPos del vertex shader mediante el location 0.
+* Luego, glVertexAttribPointer especifica cómo deben interpretarse esos datos y los conecta con el atributo aPos del vertex shader mediante el location 0
 
-* Finalmente, glDrawArrays utiliza esa configuración para ejecutar el pipeline gráfico y dibujar el triángulo.
+* Finalmente, glDrawArrays utiliza esa configuración para ejecutar el pipeline gráfico y dibujar el triángulo
 
 
 #### Evidencia 3
