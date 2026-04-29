@@ -127,19 +127,9 @@ glUniform2f(offsetLoc, x, y);
 
 <img width="521" height="576" alt="image" src="https://github.com/user-attachments/assets/83ddb97a-52b6-4de2-a966-0088297f766f" />
 
-* Se decidió manejar el desplazamiento del triángulo y el color dinámico mediante uniforms en lugar de atributos
-
-* Los uniforms son adecuados cuando un mismo valor debe aplicarse a todos los vértices o fragmentos durante un frame.
-
-* En este proyecto, el offset mueve todo el triángulo de forma uniforme y el color dinámico afecta toda la figura por igual. 
-
-* Por esta razón, no era necesario enviar valores diferentes para cada vértice mediante atributos.
-
-* Los atributos son utilizados para enviar información específica de cada vértice desde el VBO hacia el vertex shader.
-
-* En cambio, los uniforms funcionan como variables globales para los shaders y permiten modificar datos dinámicos sin alterar el contenido del VBO.
-
-* El uso de uniforms permitió modificar la posición y el color del triángulo de manera eficiente, evitando copiar nuevamente los vértices hacia la GPU en cada frame.
+* Se decidio utilizar uniforms proque el triangulo si iba a mantener igual durante todo el funcionamiento del sistema, solo se moveria al rededor del canvas y cambiaria de color dinamicamente durante ese tiempo, pero los vertices y la forma del triangulo se mantendrian iguales
+* Los atributos se usan cuando los verties neesitan datos distintos, mientras que los uniform son variables globales para hacer cambios en el shader
+* 
 
 
 
