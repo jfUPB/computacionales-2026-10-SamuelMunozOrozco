@@ -87,6 +87,45 @@ GLAD debe salir despues de GLFW, porque es el encargado de cargar las direccione
 (Pedir a chat que explique bien estas evidencias, y por el amor de Dios, pongalo en sus palabras)
 
 
+#### Evidencia 4
+
+<img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/cbc84e04-56cd-4d7e-be33-36c7a8dfac47" />
+
+* Esperaba que el triángulo dejara de renderizarse correctamente porque el atributo del vertex shader ya no coincide con el location configurado en glVertexAttribPointer.
+
+* Al ejecutar el programa, el triángulo desapareció porque el shader esperaba recibir datos en el location 1, mientras que el VBO seguía enviándolos al location 0.
+
+* Concluyo que los locations deben coincidir entre el shader y la configuración del VAO/VBO. 
+
+* La conexión entre CPU y GPU depende de esa correspondencia. Si los locations no coinciden, el vertex shader no recibe correctamente los datos de los vértices.
+
+
+
+#### Evidencia 5
+
+<img width="715" height="501" alt="image" src="https://github.com/user-attachments/assets/612ff4b4-bf18-42cf-96a4-086d4b0aaf57" />
+
+<img width="521" height="576" alt="image" src="https://github.com/user-attachments/assets/83ddb97a-52b6-4de2-a966-0088297f766f" />
+
+* Se decidió manejar el desplazamiento del triángulo y el color dinámico mediante uniforms en lugar de atributos
+
+* Los uniforms son adecuados cuando un mismo valor debe aplicarse a todos los vértices o fragmentos durante un frame.
+
+* En este proyecto, el offset mueve todo el triángulo de forma uniforme y el color dinámico afecta toda la figura por igual. 
+
+* Por esta razón, no era necesario enviar valores diferentes para cada vértice mediante atributos.
+
+* Los atributos son utilizados para enviar información específica de cada vértice desde el VBO hacia el vertex shader.
+
+* En cambio, los uniforms funcionan como variables globales para los shaders y permiten modificar datos dinámicos sin alterar el contenido del VBO.
+
+* El uso de uniforms permitió modificar la posición y el color del triángulo de manera eficiente, evitando copiar nuevamente los vértices hacia la GPU en cada frame.
+
+
+
+
+
+
 
 
 
