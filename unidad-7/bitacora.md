@@ -101,7 +101,88 @@ Se llaman “uniform” porque tienen el mismo valor para todos los vértices o 
 * Que hacen?
   - Permiten cambiar información del shader desde el programa C++.
   - Como colores, matrices, tiempo, iluminacion, posicion de camara, etc.
+ 
+#### Attribute
+Los attributes son datos que recibe el Vertex Shader para cada vértice.
 
+Ejemplo:
+```
+layout(location = 0) in vec3 aPos;
+```
+aPos es un attribute.
+
+* Que contienen?
+  - La informacion de cada vertice, como posicion, color, textura, etc.
+
+* Funcion principal
+  - Pasar datos del VBO al Vertex Shader.
+
+
+
+
+#### Pipeline grafico
+El Pipeline es la cadena completa de pasos que sigue OpenGL para convertir datos en una imagen en pantalla.
+
+* Flujo simplificado
+```
+CPU
+ ↓
+Vertices
+ ↓
+VBO
+ ↓
+VAO
+ ↓
+Vertex Shader
+ ↓
+Rasterización
+ ↓
+Fragment Shader
+ ↓
+Framebuffer
+ ↓
+Pantalla
+```
+
+
+#### FLujo del sistema (CPU a GPU)
+```
+CPU
+↓
+(Crea los datos del programa y envía instrucciones a OpenGL)
+
+Vertices
+↓
+(Arreglo con coordenadas, colores u otra información de cada vértice)
+
+VBO
+↓
+(Copia y almacena los vértices en la memoria de la GPU)
+
+VAO
+↓
+(Guarda la configuración de cómo OpenGL debe interpretar los datos del VBO)
+
+Vertex Shader
+↓
+(Procesa cada vértice individualmente: mover, rotar, escalar o transformar posiciones)
+
+Rasterización
+↓
+(Convierte las figuras matemáticas en fragmentos/píxeles de pantalla)
+
+Fragment Shader
+↓
+(Calcula el color final de cada píxel)
+
+Framebuffer
+↓
+(Guarda temporalmente la imagen renderizada antes de mostrarla)
+
+Pantalla
+↓
+(Muestra finalmente la imagen generada al usuario)
+```
 
 
 ## Bitácora de aplicación 
