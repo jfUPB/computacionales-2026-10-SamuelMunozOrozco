@@ -89,6 +89,11 @@ glUniform2f(offsetLoc, x, y);
 * El uniform ourColor modifica el color del fragment shader dinámicamente usando valores calculados con funciones seno y coseno
 * En la ventana autos se pueden ver los valores r y g como cmabian constantemente, eso demuestra el cambio visual mediante uniforms y no modificando el arreglo de ninguna manera
 
+<img width="952" height="1138" alt="image" src="https://github.com/user-attachments/assets/f6066b98-9d24-4350-be76-ebfe244f8af0" />
+
+* Estos eran los valores de g y r antes de llegar al breakpoint, lo que demuestra que van cambiado por cada loop
+
+
 <br><br>
 
 <img width="1919" height="1141" alt="image" src="https://github.com/user-attachments/assets/83c256c6-79ce-43f7-9ce3-4f4dfa89edba" />
@@ -101,15 +106,7 @@ glUniform2f(offsetLoc, x, y);
 
 <br><br>
 
-* Aunque el arreglo de vértices nunca cambia, el resultado visual sí cambia porque los uniforms permiten enviar nuevos valores a los shaders en cada frame.
-
-* Los uniforms permiten modificar variables del shader sin alterar los datos almacenados en el VBO. 
-
-* En este proyecto, el VBO conserva siempre las mismas coordenadas del triángulo, pero los uniforms offset y ourColor cambian continuamente durante la ejecución.
-
-* Esto permite modificar la posición y el color del triángulo en tiempo real sin necesidad de volver a cargar los vértices en la GPU.
-
-(Pedir a chat que explique bien estas evidencias, y por el amor de Dios, pongalo en sus palabras)
+* Los uniforms permiten modificar variables del shader sin alterar los datos almacenados en el VBO. El VBO conserva siempre las mismas coordenadas del triángulo, pero los uniforms offset y ourColor cambian continuamente durante la ejecución. Esto permite modificar la posición y el color del triángulo en tiempo real sin necesidad de volver a cargar los vértices en la GPU  
 
 
 #### Evidencia 4
