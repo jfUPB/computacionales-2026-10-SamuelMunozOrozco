@@ -2,6 +2,8 @@
 
 ## Bitácora de proceso de aprendizaje
 
+### Notas
+
 
 ## Bitácora de aplicación 
 
