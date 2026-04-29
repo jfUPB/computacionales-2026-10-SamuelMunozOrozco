@@ -63,7 +63,19 @@ GLAD debe salir despues de GLFW, porque es el encargado de cargar las direccione
 <br><br>
 
 <img width="953" height="1141" alt="image" src="https://github.com/user-attachments/assets/161266e8-22b9-40bc-a201-1d956836a48a" />
-* El uniform offset recibe valores dinámicos calculados con glfwGetTime(), permitiendo modificar la posición del triángulo sin alterar el VBO. (preguntarle a chat si es suficiente, como los valores de x y Y demuestran que no cambian los valores de los vertices en el arreglo)
+
+* El uniform offset recibe valores dinámicos calculados con glfwGetTime(), permitiendo modificar la posición del triángulo sin alterar el VBO
+* En la segunda imagen vemos esto:
+```
+float x = sin(time) * 0.5f;
+float y = cos(time) * 0.5f;
+
+Y luego esto
+
+glUniform2f(offsetLoc, x, y);
+```
+* Lo que significa que el triangulo se esta moviendo, porque X y Y cambia, por los valores de X y Y que se ven en la ventana autos
+* El movimiento de X y Y no viene del arreglo de vertices, solo se hace un desplazamiento, pero los vertices siguen siendo los mismo, porque si cambiara, la figura del triangulo cambiaria
 
 <br><br>
 
